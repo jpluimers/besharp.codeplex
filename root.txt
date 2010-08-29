@@ -1,0 +1,1 @@
+root of the bsharp project in tfs.codeplex.com\TFS02
