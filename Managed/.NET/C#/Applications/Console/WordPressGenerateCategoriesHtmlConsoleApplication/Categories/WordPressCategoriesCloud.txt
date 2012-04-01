@@ -1,0 +1,34 @@
+<li id="tag_cloud" class="widget widget_tag_cloud"><h2 class="widgettitle">Category Cloud</h2>
+<div style='overflow: hidden'>
+<a href='http://wiert.me/category/development/software-development/net/' style='font-size: 170.95671981777%; padding: 1px; margin: 1px;' title='.NET (200)'>.NET</a>
+<a href='http://wiert.me/category/about/' style='font-size: 117.14123006834%; padding: 1px; margin: 1px;' title='About (65)'>About</a>
+<a href='http://wiert.me/category/power-user/apple/' style='font-size: 100.3986332574%; padding: 1px; margin: 1px;' title='Apple (23)'>Apple</a>
+<a href='http://wiert.me/category/development/software-development/net/c/' style='font-size: 134.68109339408%; padding: 1px; margin: 1px;' title='C# (109)'>C#</a>
+<a href='http://wiert.me/category/development/software-development/net/c/c-20/' style='font-size: 108.76993166287%; padding: 1px; margin: 1px;' title='C# 2.0 (44)'>C# 2.0</a>
+<a href='http://wiert.me/category/development/software-development/net/c/c-3-0/' style='font-size: 103.98633257403%; padding: 1px; margin: 1px;' title='C# 3.0 (32)'>C# 3.0</a>
+<a href='http://wiert.me/category/development/software-development/net/c/c-4-0/' style='font-size: 103.18906605923%; padding: 1px; margin: 1px;' title='C# 4.0 (30)'>C# 4.0</a>
+<a href='http://wiert.me/category/development/software-development/commandline/' style='font-size: 102.39179954442%; padding: 1px; margin: 1px;' title='CommandLine (28)'>CommandLine</a>
+<a href='http://wiert.me/category/event/conferences/' style='font-size: 100%; padding: 1px; margin: 1px;' title='Conferences (22)'>Conferences</a>
+<a href='http://wiert.me/category/development/database-development/' style='font-size: 113.15489749431%; padding: 1px; margin: 1px;' title='Database Development (55)'>Database Development</a>
+<a href='http://wiert.me/category/development/software-development/delphi/' style='font-size: 175.3416856492%; padding: 1px; margin: 1px;' title='Delphi (211)'>Delphi</a>
+<a href='http://wiert.me/category/development/' style='font-size: 275%; padding: 1px; margin: 1px;' title='Development (461)'>Development</a>
+<a href='http://wiert.me/category/event/' style='font-size: 102.79043280182%; padding: 1px; margin: 1px;' title='Event (29)'>Event</a>
+<a href='http://wiert.me/category/power-user/lifehacker/' style='font-size: 107.97266514806%; padding: 1px; margin: 1px;' title='LifeHacker (42)'>LifeHacker</a>
+<a href='http://wiert.me/category/opinions/' style='font-size: 123.12072892938%; padding: 1px; margin: 1px;' title='Opinions (80)'>Opinions</a>
+<a href='http://wiert.me/category/about/personal/' style='font-size: 114.74943052392%; padding: 1px; margin: 1px;' title='Personal (59)'>Personal</a>
+<a href='http://wiert.me/category/power-user/' style='font-size: 223.17767653759%; padding: 1px; margin: 1px;' title='Power User (331)'>Power User</a>
+<a href='http://wiert.me/category/development/software-development/net/prism/' style='font-size: 102.39179954442%; padding: 1px; margin: 1px;' title='Prism (28)'>Prism</a>
+<a href='http://wiert.me/category/development/software-development/' style='font-size: 243.90660592255%; padding: 1px; margin: 1px;' title='Software Development (383)'>Software Development</a>
+<a href='http://wiert.me/category/development/source-code-management/' style='font-size: 102.39179954442%; padding: 1px; margin: 1px;' title='Source Code Management (28)'>Source Code Management</a>
+<a href='http://wiert.me/category/development/database-development/sql-server/' style='font-size: 103.98633257403%; padding: 1px; margin: 1px;' title='SQL Server (32)'>SQL Server</a>
+<a href='http://wiert.me/category/uncategorized/' style='font-size: 100.3986332574%; padding: 1px; margin: 1px;' title='Uncategorized (23)'>Uncategorized</a>
+<a href='http://wiert.me/category/development/software-development/net/visual-studio-and-tools/' style='font-size: 109.56719817768%; padding: 1px; margin: 1px;' title='Visual Studio and tools (46)'>Visual Studio and tools</a>
+<a href='http://wiert.me/category/power-user/vmware/' style='font-size: 103.98633257403%; padding: 1px; margin: 1px;' title='VMware (32)'>VMware</a>
+<a href='http://wiert.me/category/development/software-development/web-development/' style='font-size: 104.38496583144%; padding: 1px; margin: 1px;' title='Web Development (33)'>Web Development</a>
+<a href='http://wiert.me/category/power-user/windows/' style='font-size: 104.38496583144%; padding: 1px; margin: 1px;' title='Windows (33)'>Windows</a>
+<a href='http://wiert.me/category/power-user/windows/windows-7/' style='font-size: 104.38496583144%; padding: 1px; margin: 1px;' title='Windows 7 (33)'>Windows 7</a>
+<a href='http://wiert.me/category/power-user/windows/windows-vista/' style='font-size: 101.19589977221%; padding: 1px; margin: 1px;' title='Windows Vista (25)'>Windows Vista</a>
+<a href='http://wiert.me/category/power-user/windows/windows-xp/' style='font-size: 101.19589977221%; padding: 1px; margin: 1px;' title='Windows XP (25)'>Windows XP</a>
+<a href='http://wiert.me/category/development/xmlxsd/' style='font-size: 100.3986332574%; padding: 1px; margin: 1px;' title='XML/XSD (23)'>XML/XSD</a>
+</div></li>
+
