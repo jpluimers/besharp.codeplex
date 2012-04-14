@@ -14,7 +14,7 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
         {
             Stack<optionType> itemStack = new Stack<optionType>();
             optionType parent = null;
-            int previousLevel = -1;
+            int previousLevel = optionType.RootLevel;
 
             foreach (optionType item in option)
             {
@@ -53,6 +53,10 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
         }
     }
 
+    /// <summary>
+    /// Partial class part for decoding the optionType properties that come from the XHTML into something we actually will be emit in our generated HTML
+    /// see http://wiert.me/2012/08/22/generating-a-wordpress-posting-categories-page-part-2 for a description
+    /// </summary>
     partial class optionType
     {
         public const int RootLevel = -1;
@@ -64,19 +68,6 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
 
         public optionType parent { get; set; }
 
-        public int Level
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(@class))
-                    return -1;
-                string[] split = @class.Split(hyphen);
-                string number = split[1];
-                int result = int.Parse(number);
-                return result;
-            }
-        }
-
         public string Category
         {
             get
@@ -84,6 +75,32 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
                 string result;
                 string countInParenthesis;
                 splitValue(out result, out countInParenthesis);
+                return result;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                string category;
+                string countInParenthesis;
+                splitValue(out category, out countInParenthesis);
+                string count = countInParenthesis.Substring(1, countInParenthesis.Length - 2);
+                int result = int.Parse(count);
+                return result;
+            }
+        }
+
+        public int Level
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(@class))
+                    return RootLevel;
+                string[] split = @class.Split(hyphen);
+                string number = split[1];
+                int result = int.Parse(number);
                 return result;
             }
         }
@@ -145,19 +162,6 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
             {
                 category = result;
                 countInParenthesis = emptyCountInParenthesis;
-            }
-        }
-
-        public int Count
-        {
-            get
-            {
-                string category;
-                string countInParenthesis;
-                splitValue(out category, out countInParenthesis);
-                string count = countInParenthesis.Substring(1, countInParenthesis.Length - 2);
-                int result = int.Parse(count);
-                return result;
             }
         }
 
