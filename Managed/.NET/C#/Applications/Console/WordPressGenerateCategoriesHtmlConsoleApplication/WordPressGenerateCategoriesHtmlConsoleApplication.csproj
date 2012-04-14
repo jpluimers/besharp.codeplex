@@ -58,11 +58,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Categories\WordPressCategoriesDropDown.xml" />
+    <Content Include="CategoryFrequencyDistribution.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Categories\WordPressCategoriesDropDownXml.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="CategoryFrequencyDistribution.graph.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Library\BeSharp\BeSharp.csproj">
