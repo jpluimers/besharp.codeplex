@@ -28,11 +28,7 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
             {
                 string inputFileName = args[0];
                 string inputHtml = getHtml(inputFileName);
-                // escape the ampersand as XML uses the & as a special character too: http://stackoverflow.com/questions/1328538/how-do-i-escape-ampersands-in-xml
-                // this is mainly to replace the "&nbsp;", but since any & in HTML will kill the XML, replace them all. Reading the text back from get us back the &, so "&amp;nbsp;" will become "&nbsp;" 
-                // since WordPress has escaped other HTML sensitive characters too, we will take those in one go.
-                string xml = inputHtml.Replace("&", "&amp;");
-
+                string xml = toXml(inputHtml);
                 selectType select = selectType.Deserialize(xml);
                 select.FixParents();
 
@@ -48,7 +44,7 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
                     // <a href='http://wiert.me/category/development/xmlxsd/' style='font-size: 100.3986332574%; padding: 1px; margin: 1px;' title='XML/XSD (23)'>XML/XSD</a>
                     string url = String.Format("{0}/category{1}", rootUrl, item.HtmlPath);
                     string prefix = new string('.', item.Level * 5);// optionType.NbspEscaped.Repeat(item.Level);
-                    outputHtml.AppendFormat("{0}<a href='{1}' style='font-size: 100%; padding: 1px; margin: 1px;' title='{2}'>{2}</a>", prefix, url, item.Category);
+                    outputHtml.AppendFormat("{0}<a href='{1}' title='{2}'>{2}{3}({4})</a>", prefix, url, item.Category, optionType.NbspEscaped, item.Count);
                     outputHtml.AppendLine();
                 }
 
@@ -67,6 +63,15 @@ namespace WordPressGenerateCategoriesHtmlConsoleApplication
                         outputStream.Close();
                 }
             }
+        }
+
+        private static string toXml(string inputHtml)
+        {
+            // escape the ampersand as XML uses the & as a special character too: http://stackoverflow.com/questions/1328538/how-do-i-escape-ampersands-in-xml
+            // this is mainly to replace the "&nbsp;", but since any & in HTML will kill the XML, replace them all. Reading the text back from get us back the &, so "&amp;nbsp;" will become "&nbsp;" 
+            // since WordPress has escaped other HTML sensitive characters too, we will take those in one go.
+            string result = inputHtml.Replace("&", "&amp;");
+            return result;
         }
 
         private static void dump(selectType select)
