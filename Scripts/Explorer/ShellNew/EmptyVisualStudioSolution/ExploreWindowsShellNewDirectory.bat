@@ -1,0 +1,1 @@
+explorer /e,%WinDir%\ShellNew
