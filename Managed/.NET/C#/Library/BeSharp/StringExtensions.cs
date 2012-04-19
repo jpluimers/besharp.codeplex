@@ -7,6 +7,16 @@ namespace BeSharp
 {
     public static class StringExtensions
     {
+        public static bool IsAllDigits(this string value)
+        {
+            foreach (char item in value)
+            {
+                if (!Char.IsDigit(item))
+                    return false;
+            }
+            return true;
+        }
+
         /// <summary>
         /// Repeats a string count times
         /// Thanks DrJokepu http://stackoverflow.com/users/8954/drjokepu

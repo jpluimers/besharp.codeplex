@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberVerificationTestProject", "NumberVerificationTestProject.csproj", "{D6E76CE0-68B0-4649-93F4-700F3BF18E77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F5D46C8B-F0E1-4AFE-838A-98E76B72E03C}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		NumberVerificationTestProject.vsmdi = NumberVerificationTestProject.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.NumberVerification", "..\..\..\..\Library\BeSharp.NumberVerification\BeSharp.NumberVerification\BeSharp.NumberVerification.csproj", "{381C79C9-E911-438A-BB98-50C37494756B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp", "..\..\..\..\Library\BeSharp\BeSharp.csproj", "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NumberVerificationTestProject.csproj
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ..\\..\\..\\..\\Library\\BeSharp.NumberVerification\\BeSharp.NumberVerification\\BeSharp.NumberVerification.csproj
+		SccProjectName2 = ../../../../Library/BeSharp.NumberVerification/BeSharp.NumberVerification
+		SccLocalPath2 = ..\\..\\..\\..\\Library\\BeSharp.NumberVerification\\BeSharp.NumberVerification
+		SccProjectUniqueName3 = ..\\..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
+		SccProjectName3 = ../../../../Library/BeSharp
+		SccLocalPath3 = ..\\..\\..\\..\\Library\\BeSharp
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = NumberVerificationTestProject.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
