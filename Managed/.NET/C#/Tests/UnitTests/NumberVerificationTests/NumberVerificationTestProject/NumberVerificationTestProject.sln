@@ -14,9 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.NumberVerification"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp", "..\..\..\..\Library\BeSharp\BeSharp.csproj", "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharpTestProject", "..\..\BeSharpTestProject\BeSharpTestProject.csproj", "{B591657B-EADE-49EB-A90D-6B1F00E8E01D}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
 		SccLocalPath0 = .
@@ -28,6 +30,9 @@ Global
 		SccProjectUniqueName3 = ..\\..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
 		SccProjectName3 = ../../../../Library/BeSharp
 		SccLocalPath3 = ..\\..\\..\\..\\Library\\BeSharp
+		SccProjectUniqueName4 = ..\\..\\BeSharpTestProject\\BeSharpTestProject.csproj
+		SccProjectName4 = ../../BeSharpTestProject
+		SccLocalPath4 = ..\\..\\BeSharpTestProject
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NumberVerificationTestProject.vsmdi
@@ -49,6 +54,10 @@ Global
 		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B591657B-EADE-49EB-A90D-6B1F00E8E01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B591657B-EADE-49EB-A90D-6B1F00E8E01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B591657B-EADE-49EB-A90D-6B1F00E8E01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B591657B-EADE-49EB-A90D-6B1F00E8E01D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,12 +9,14 @@ namespace BeSharp
     {
         public static bool IsAllDigits(this string value)
         {
-            foreach (char item in value)
-            {
-                if (!Char.IsDigit(item))
-                    return false;
-            }
-            return true;
+            return value.All(Char.IsDigit);
+            // the above LINQ code is completely equivalent to the code below:
+            //foreach (char item in value)
+            //{
+            //    if (!Char.IsDigit(item))
+            //        return false;
+            //}
+            //return true;
         }
 
         /// <summary>
