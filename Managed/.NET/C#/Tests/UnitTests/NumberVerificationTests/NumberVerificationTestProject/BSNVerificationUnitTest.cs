@@ -123,6 +123,11 @@ namespace NumberVerificationTestProject
         private static void scamble_TestMethod(BSNVerification verification, string validBSNTestNummer)
         {
             string rot5 = verification.Scramble(validBSNTestNummer);
+            {
+                int result = rot5.Length;
+                int expected = validBSNTestNummer.Length;
+                Assert.AreEqual(expected, result, "Expected length {0} of BSNVerification.Rot5 to the same as the plain length {1}", result, expected);
+            }
             foreach (char item in rot5)
             {
                 bool result = char.IsNumber(item) || (item == '.');

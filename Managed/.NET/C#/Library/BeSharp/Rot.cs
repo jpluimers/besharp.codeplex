@@ -64,7 +64,7 @@ namespace BeSharp
             if (
                 ((value >= 'A') && (value <= 'M'))
                 ||
-                ((value >= 'a') && (value <= 'M'))
+                ((value >= 'a') && (value <= 'm'))
                 )
             {
                 char result = (char)(value + Rot13Displacement);
@@ -87,6 +87,19 @@ namespace BeSharp
         public static string Rot13(string value)
         {
             string result = rot(value, Rot13);
+            return result;
+        }
+
+        public static char Rot135(char value)
+        {
+            char rot13 = Rot13(value);
+            char result = Rot5(rot13);
+            return result;
+        }
+
+        public static string Rot135(string value)
+        {
+            string result = rot(value, Rot135);
             return result;
         }
 
