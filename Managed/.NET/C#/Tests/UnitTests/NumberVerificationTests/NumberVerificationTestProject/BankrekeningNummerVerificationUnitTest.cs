@@ -125,6 +125,11 @@ namespace NumberVerificationTestProject
         private static void scamble_TestMethod(BankrekeningNummerVerification verification, string validBankrekeningNummerTestNummer)
         {
             string rot5 = verification.Scramble(validBankrekeningNummerTestNummer);
+            {
+                int result = rot5.Length;
+                int expected = validBankrekeningNummerTestNummer.Length;
+                Assert.AreEqual(expected, result, "Expected length {0} of BankrekeningNummerVerification.Rot5 to the same as the plain length {1}", result, expected);
+            }
             foreach (char item in rot5)
             {
                 bool result = char.IsNumber(item) || (item == '.');
