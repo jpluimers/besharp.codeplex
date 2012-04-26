@@ -15,27 +15,11 @@ namespace BeSharp.NumberVerification
     {
         public const int MaxBSNLength = 9;
         public const int MinBSNLength = 9;
-        private const int modulus = 11;
-        private const char zeroDigit = '0';
 
-        public override string Complete(string incompleteNumber)
+        protected override int getLastDigitFromWeightedModulus(int weightedModulus)
         {
-            string value = incompleteNumber + zeroDigit;
-
-            bool passedSanityCheck = saneWithoutPoints(ref value);
-            if (!passedSanityCheck)
-                throw new Exception<BSNVerification>("{0} didn't pass sanity check".With(Reflector.GetNameSeparatorValue(new { partialBSN = incompleteNumber })));
-
-            int weightedModulus = getWeightedModulus(ref value);
-
             int lastDigit = weightedModulus;
-
-            if (lastDigit > 9)
-                throw new Exception<BSNVerification>("Cannot complete {0} as it would result in {1}".With(Reflector.GetNameSeparatorValue(new { partialBSN = incompleteNumber }), Reflector.GetNameSeparatorValue(new { lastDigit })));
-
-            value = incompleteNumber + lastDigit.ToString();
-
-            return value;
+            return lastDigit;
         }
 
         protected override int getWeightedModulus(ref string value)

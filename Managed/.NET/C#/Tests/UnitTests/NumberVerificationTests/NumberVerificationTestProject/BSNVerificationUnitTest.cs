@@ -46,7 +46,7 @@ namespace NumberVerificationTestProject
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception<BSNVerification>))]
+        [ExpectedException(typeof(Exception<BankrekeningNummerBSNVerificationBase>))]
         public void Complete_cannotBecomeTenDigits_TestMethod()
         {
             BSNVerification verification = new BSNVerification();

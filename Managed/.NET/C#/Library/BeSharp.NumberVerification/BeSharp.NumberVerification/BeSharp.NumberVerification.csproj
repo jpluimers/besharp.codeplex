@@ -49,6 +49,7 @@
     <Compile Include="BankrekeningNummerVerification.cs" />
     <Compile Include="BSNVerification.cs" />
     <Compile Include="GS1.cs" />
+    <Compile Include="GTINVerification.cs" />
     <Compile Include="NumberVerification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

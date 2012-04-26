@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -47,7 +46,7 @@ namespace NumberVerificationTestProject
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception<BankrekeningNummerVerification>))]
+        [ExpectedException(typeof(Exception<BankrekeningNummerBSNVerificationBase>))]
         public void Complete_cannotBecomeTenDigits_TestMethod()
         {
             BankrekeningNummerVerification verification = new BankrekeningNummerVerification();
@@ -101,7 +100,7 @@ namespace NumberVerificationTestProject
         public void Random_invalidLength_TestMethod()
         {
             BankrekeningNummerVerification verification = new BankrekeningNummerVerification();
-            string generatedBankrekeningNummer = verification.Random(100); // invalid length; should throw an exception
+            verification.Random(100); // invalid length; should throw an exception
         }
 
         private static void validateGeneratedNumber(BankrekeningNummerVerification verification, string generatedBankrekeningNummer)
@@ -133,8 +132,7 @@ namespace NumberVerificationTestProject
             foreach (char item in rot5)
             {
                 bool result = char.IsNumber(item) || (item == '.');
-                bool expected = true;
-                Assert.AreEqual(expected, result, "Expected all characters returned by BankrekeningNummerVerification.Rot5 to be numeric or dot, but {0} isn't", item);
+                Assert.AreEqual(true, result, "Expected all characters returned by BankrekeningNummerVerification.Rot5 to be numeric or dot, but {0} isn't", item);
             }
         }
 
