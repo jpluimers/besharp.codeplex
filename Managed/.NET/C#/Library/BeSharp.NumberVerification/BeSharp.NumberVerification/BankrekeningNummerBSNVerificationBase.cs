@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using BeSharp.Generic;
 using System.Diagnostics.Contracts;
 
@@ -9,7 +8,12 @@ namespace BeSharp.NumberVerification
 {
     public abstract class BankrekeningNummerBSNVerificationBase : NumberVerification
     {
+        protected const int modulus = 11;
+        protected const char zeroDigit = '0';
+
         protected abstract bool isInvalidLength(int length);
+
+        protected abstract int getLastDigitFromWeightedModulus(int weightedModulus);
 
         protected abstract int getWeightedModulus(ref string value);
 
@@ -35,6 +39,26 @@ namespace BeSharp.NumberVerification
         protected virtual string stripPoints(string BSN)
         {
             string value = BSN.Replace(".", string.Empty);
+            return value;
+        }
+
+        public override string Complete(string incompleteNumber)
+        {
+            string value = incompleteNumber + zeroDigit;
+
+            bool passedSanityCheck = saneWithoutPoints(ref value);
+            if (!passedSanityCheck)
+                throw new Exception<BankrekeningNummerBSNVerificationBase>("{0} didn't pass sanity check".With(Reflector.GetNameSeparatorValue(new { partialBankrekeningNummer = incompleteNumber })));
+
+            int weightedModulus = getWeightedModulus(ref value);
+
+            int lastDigit = getLastDigitFromWeightedModulus(weightedModulus);
+
+            if (lastDigit > 9)
+                throw new Exception<BankrekeningNummerBSNVerificationBase>("Cannot complete {0} as it would result in {1}".With(Reflector.GetNameSeparatorValue(new { partialBankrekeningNummer = incompleteNumber }), Reflector.GetNameSeparatorValue(new { lastDigit })));
+
+            value = incompleteNumber + lastDigit;
+
             return value;
         }
 
@@ -105,7 +129,7 @@ namespace BeSharp.NumberVerification
                 char alterDigitChar = incompleteNumber[alterDigitPosition];
                 int alterDigit = int.Parse(alterDigitChar.ToString());
                 int alteredDigit = (alterDigit + 1) % 10;
-                string alteredIncompleteNumber = incompleteNumber.Substring(0, alterDigitPosition) + alteredDigit.ToString() + incompleteNumber.Substring(alterDigitPosition + 1);
+                string alteredIncompleteNumber = incompleteNumber.Substring(0, alterDigitPosition) + alteredDigit + incompleteNumber.Substring(alterDigitPosition + 1);
                 result = Complete(alteredIncompleteNumber);
             }
             result += rot5number.Substring(lastDigitPosition + 1); // make sure non digits get at the end
