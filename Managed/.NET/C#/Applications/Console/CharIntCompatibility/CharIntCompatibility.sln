@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharIntCompatibilityCSharp", "CharIntCompatibility\CharIntCompatibilityCSharp.csproj", "{45279BAF-5FAE-400B-8C51-DA673FCF4F45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharIntCompatibilityCSharp", "CharIntCompatibilityCSharp\CharIntCompatibilityCSharp.csproj", "{45279BAF-5FAE-400B-8C51-DA673FCF4F45}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CharIntCompatibilityVB", "CharIntCompatibilityCSharpVB\CharIntCompatibilityVB.vbproj", "{E286263E-0200-43FB-B176-11D60D99BD6F}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CharIntCompatibilityVB", "CharIntCompatibilityVB\CharIntCompatibilityVB.vbproj", "{E286263E-0200-43FB-B176-11D60D99BD6F}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -11,12 +11,12 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = CharIntCompatibility\\CharIntCompatibilityCSharp.csproj
-		SccProjectName1 = CharIntCompatibility
-		SccLocalPath1 = CharIntCompatibility
-		SccProjectUniqueName2 = CharIntCompatibilityCSharpVB\\CharIntCompatibilityVB.vbproj
-		SccProjectName2 = CharIntCompatibilityCSharpVB
-		SccLocalPath2 = CharIntCompatibilityCSharpVB
+		SccProjectUniqueName1 = CharIntCompatibilityVB\\CharIntCompatibilityVB.vbproj
+		SccProjectName1 = CharIntCompatibilityVB
+		SccLocalPath1 = CharIntCompatibilityVB
+		SccProjectUniqueName2 = CharIntCompatibilityCSharp\\CharIntCompatibilityCSharp.csproj
+		SccProjectName2 = CharIntCompatibilityCSharp
+		SccLocalPath2 = CharIntCompatibilityCSharp
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
