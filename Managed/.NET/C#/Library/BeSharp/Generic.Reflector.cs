@@ -50,6 +50,20 @@ namespace BeSharp.Generic
             return result;
         }
 
+        public static List<string> GetNameSeparatorValues<T>(T items, string separator = Colon)
+        {
+            List<string> result = new List<string>();
+
+            string[] names = Generic.TypeCache<T>.Names;
+            foreach (string name in names)
+            {
+                string nameSeparatorValue = GetNameSeparatorValue<T>(items, separator, name);
+                result.Add(nameSeparatorValue);
+            }
+
+            return result;
+        }
+
         public static string GetNameSeparatorTabValues<T>(T items, string separator = Colon)
         {
             string[] names = Generic.TypeCache<T>.Names;
@@ -86,19 +100,33 @@ namespace BeSharp.Generic
             return nameSeparatorValue;
         }
 
-        private static object getValue<T>(T item, string name)
+        public static object GetPrivateProperty<T>(T item, string name)
         {
-            MemberInfo[] memberInfos = typeof(T).GetMember(name);
+            object result = getValue(item, name, BindingFlags.Static | BindingFlags.NonPublic);
+            return result;
+        }
+
+        const BindingFlags defaultBindingFlags = BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance;
+
+        private static object getValue<T>(T item, string name, BindingFlags bindingFlags = defaultBindingFlags)
+        {
+            MemberInfo[] memberInfos = typeof(T).GetMember(name, bindingFlags);
             int memberInfosLength = memberInfos.Length;
             if (memberInfosLength != 1)
                 throw new ArgumentException(string.Format("parameter {0} with name {1} should return 1 member with that name, but returns {2} members", "item", name, memberInfosLength));
             MemberInfo memberInfo = memberInfos[0];
-            PropertyInfo propertyInfo = memberInfo as PropertyInfo;
             object value;
+            PropertyInfo propertyInfo = memberInfo as PropertyInfo;
             if (null != propertyInfo)
                 value = propertyInfo.GetValue(item, null);
             else
-                value = item;
+            {
+                FieldInfo fieldInfo = memberInfo as FieldInfo;
+                if (null != fieldInfo)
+                    value = fieldInfo.GetValue(item);
+                else
+                    value = item;
+            }
             return value;
         }
 
