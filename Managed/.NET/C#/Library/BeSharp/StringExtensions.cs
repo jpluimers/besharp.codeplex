@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 
 namespace BeSharp
 {
@@ -132,6 +133,29 @@ namespace BeSharp
         public static string With(this string format, params object[] args)
         {
             return string.Format(format, args);
+        }
+
+        public static string ToAscii(this string value)
+        {
+            return RemoveDiacritics(value);
+        }
+
+        // http://stackoverflow.com/questions/249087/how-do-i-remove-diacritics-accents-from-a-string-in-net
+        private static string RemoveDiacritics(this string value)
+        {
+            string valueFormD = value.Normalize(NormalizationForm.FormD);
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (System.Char item in valueFormD)
+            {
+                UnicodeCategory unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(item);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(item);
+                }
+            }
+
+            return (stringBuilder.ToString().Normalize(NormalizationForm.FormC));
         }
     }
 }
