@@ -2,22 +2,24 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CEED648B-A043-437D-A253-5DC27E225BBA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeSharp.IO</RootNamespace>
-    <AssemblyName>BeSharp.IO</AssemblyName>
+    <RootNamespace>CreateTemporaryRandomDirectory</RootNamespace>
+    <AssemblyName>CreateTemporaryRandomDirectory</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +28,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,20 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentControlSetDevice.cs" />
-    <Compile Include="DeviceRegistryEnumerator.cs" />
-    <Compile Include="DirectoryHelper.cs" />
-    <Compile Include="Ports\ParallelPortDevice.cs" />
-    <Compile Include="Ports\SerialPortDevice.cs" />
-    <Compile Include="FileHelper.cs" />
-    <Compile Include="Ports\ParallelPort.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ports\ReservedDeviceNames.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BeSharp\BeSharp.csproj">
-      <Project>{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}</Project>
-      <Name>BeSharp</Name>
+    <ProjectReference Include="..\..\..\Library\BeSharp.IO\BeSharp.IO.csproj">
+      <Project>{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}</Project>
+      <Name>BeSharp.IO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
