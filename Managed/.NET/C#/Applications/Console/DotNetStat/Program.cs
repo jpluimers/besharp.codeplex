@@ -29,14 +29,20 @@ namespace DotNetStat
                         tcpConnection.RemoteEndPoint.ToAddressPortString(),
                         tcpConnection.State);
                 }
-                Console.WriteLine("Distinct Remote Address:Port pairs by Remote Address:");
 
-                IEnumerable<IGrouping<IPAddress, TcpConnectionInformation>> tcpConnectionsByRemoteaddressGroups = from tcpConnection in tcpConnections
-                                                                                                                  //orderby tcpConnection.RemoteEndPoint.Address // "At least one object must implement IComparable." because Address has no IComparable
-                                                                                                                  orderby tcpConnection.RemoteEndPoint.Address.ToString()
-                                                                                                                  group tcpConnection by tcpConnection.RemoteEndPoint.Address;
+                ///////////////////////////////////////////////////////////////
 
-                foreach (IGrouping<IPAddress, TcpConnectionInformation> tcpConnectionsByRemoteaddressGroup in tcpConnectionsByRemoteaddressGroups)
+                IEnumerable<IGrouping<IPAddress, TcpConnectionInformation>> tcpConnectionsByRemoteAddressGroups =
+                    from tcpConnection in tcpConnections
+                    //orderby tcpConnection.RemoteEndPoint.Address // "At least one object must implement IComparable." because Address has no IComparable
+                    orderby tcpConnection.RemoteEndPoint.Address.ToString()
+                    group tcpConnection by tcpConnection.RemoteEndPoint.Address;
+
+                ///////////////////////////////////////////////////////////////
+
+                Console.WriteLine("Distinct RemoteAddress:RemotePort pairs by RemoteAddress:");
+
+                foreach (IGrouping<IPAddress, TcpConnectionInformation> tcpConnectionsByRemoteaddressGroup in tcpConnectionsByRemoteAddressGroups)
                 {
                     //123456789012345  
                     //255.255.255.255  80, 443
@@ -44,16 +50,22 @@ namespace DotNetStat
                     IEnumerable<int> allRemotePorts = from tcpConnectionsByRemoteaddress in tcpConnectionsByRemoteaddressGroup
                                                       orderby tcpConnectionsByRemoteaddress.RemoteEndPoint.Port
                                                       select tcpConnectionsByRemoteaddress.RemoteEndPoint.Port;
-                    IEnumerable<int> distinctRemotePorts = allRemotePorts.Distinct();
-                    bool first = true;
-                    foreach (int distinctRemotePort in distinctRemotePorts)
-                    {
-                        if (!first)
-                            Console.Write(", ");
-                    	Console.Write(distinctRemotePort);
-                        first = false;
-                    }
-                    Console.WriteLine();
+                    consoleWriteLine(allRemotePorts);
+                }
+
+                ///////////////////////////////////////////////////////////////
+
+                Console.WriteLine("Distinct RemoteAddress:LocalPort pairs by RemoteAddress:");
+
+                foreach (IGrouping<IPAddress, TcpConnectionInformation> tcpConnectionsByRemoteaddressGroup in tcpConnectionsByRemoteAddressGroups)
+                {
+                    //123456789012345
+                    //255.255.255.255  80, 443
+                    Console.Write("{0,-15}  ", tcpConnectionsByRemoteaddressGroup.Key);
+                    IEnumerable<int> allLocalPorts = from tcpConnectionsByRemoteaddress in tcpConnectionsByRemoteaddressGroup
+                                                     orderby tcpConnectionsByRemoteaddress.LocalEndPoint.Port
+                                                     select tcpConnectionsByRemoteaddress.LocalEndPoint.Port;
+                    consoleWriteLine(allLocalPorts);
                 }
             }
 
@@ -66,6 +78,21 @@ namespace DotNetStat
                     Console.WriteLine(tcpEndPoint.ToAddressPortString());
                 }
             }
+        }
+
+        private static void consoleWriteLine(IEnumerable<int> allPorts)
+        {
+            IEnumerable<int> distinctPorts = allPorts.Distinct();
+
+            bool first = true;
+            foreach (int distinctPort in distinctPorts)
+            {
+                if (!first)
+                    Console.Write(", ");
+                Console.Write(distinctPort);
+                first = false;
+            }
+            Console.WriteLine();
         }
 
         private static void consoleWriteLine(object first, object second, object third)
