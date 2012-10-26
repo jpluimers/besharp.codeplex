@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BB0A3900-D7E8-437C-B088-4E8AC26FC9F8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Apps\D2006XE2MigrationExamples\D2006XE2MigrationExamples.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\SplitListOfIntegersIntoSublists\SplitListOfIntegersIntoSublists.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="D2006XE2MigrationExamples">
+        <MSBuild Projects="Apps\D2006XE2MigrationExamples\D2006XE2MigrationExamples.dproj"/>
+    </Target>
+    <Target Name="D2006XE2MigrationExamples:Clean">
+        <MSBuild Projects="Apps\D2006XE2MigrationExamples\D2006XE2MigrationExamples.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="D2006XE2MigrationExamples:Make">
+        <MSBuild Projects="Apps\D2006XE2MigrationExamples\D2006XE2MigrationExamples.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SplitListOfIntegersIntoSublists">
+        <MSBuild Projects="Apps\SplitListOfIntegersIntoSublists\SplitListOfIntegersIntoSublists.dproj"/>
+    </Target>
+    <Target Name="SplitListOfIntegersIntoSublists:Clean">
+        <MSBuild Projects="Apps\SplitListOfIntegersIntoSublists\SplitListOfIntegersIntoSublists.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SplitListOfIntegersIntoSublists:Make">
+        <MSBuild Projects="Apps\SplitListOfIntegersIntoSublists\SplitListOfIntegersIntoSublists.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TypeIdentity">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj"/>
+    </Target>
+    <Target Name="TypeIdentity:Clean">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TypeIdentity:Make">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;TypeIdentity"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;TypeIdentity:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;TypeIdentity:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
