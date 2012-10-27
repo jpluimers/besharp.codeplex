@@ -77,6 +77,8 @@ Date, Time, Type, Filename, Extension, Size, Transferred, Exchanged, Efficiency
             //(Fri Sep 14 08:33:20 2012)\tInfo\tFrom Datacenter Default T:\AMS-TSM1\ams-fsrv1\TalonStorage\Products\FAST\Guides\~$lon FAST 1.0 User Guide.docx File Size[162] Bytes Transferred[162] Bytes Exchanged[162] Transfer Efficiency[0]
             //(Fri Sep 14 08:33:48 2012)\tInfo\tFrom Datacenter Default T:\AMS-TSM1\ams-fsrv1\TalonStorage\Products\FAST\Guides\Talon FAST 1.0 Quick Start Guide updated by Jaap Vers2.docx File Size[1674533] Bytes Transferred[1675165] Bytes Exchanged[1546799] Transfer Efficiency[7.62804]
             //(Fri Sep 14 08:33:50 2012)\tInfo\tFrom Datacenter Default T:\AMS-TSM1\ams-fsrv1\TalonStorage\Products\FAST\Guides\~$lon FAST 1.0 Quick Start Guide updated by Jaap Vers2.docx File Size[162] Bytes Transferred[162] Bytes Exchanged[162] Transfer Efficiency[0]
+            //(Fri Oct 19 04:01:17 2012)\tInfo\tTo Datacenter Default LON-FSRV1\qa\dir10\TacitFS_Test_Shortcut.lnk File Size[989] Bytes Transferred[989] Bytes Exchanged[989] Transfer Efficiency[0]
+            //(Fri Oct 19 04:01:17 2012)\tInfo\tTo Datacenter Gathered-write LON-FSRV1\qa\dir80\hfbvgmepgwmesmstlmwgxsesqtsrhhvb79220479FIONXYIQF.NUST File Size[43] Bytes Transferred[43] Bytes Exchanged[43] Transfer Efficiency[0]
             //0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
             //0---------1---------2---------3---------4---------5---------6---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1---------1
             // 1,3 5,3 9  2  5  8  21,4
@@ -118,9 +120,25 @@ Date, Time, Type, Filename, Extension, Size, Transferred, Exchanged, Efficiency
             remaining = remaining.Substring(0, fileSizePrefixIndex);
 
             int colonIndex = remaining.IndexOf(":");
+            int filePathIndex;
 
-            this.TransferType = remaining.Substring(0, colonIndex - 2);
-            this.FilePath = remaining.Substring(colonIndex - 1);
+            if (-1 == colonIndex) // Core log: file path starts with a machine name and a backslash. Before the machine name, there is a space.
+            {
+                //To Datacenter Default LON-FSRV1\qa\dir10\TacitFS_Test_Shortcut.lnk
+                //To Datacenter Gathered-write LON-FSRV1\qa\dir80\hfbvgmepgwmesmstlmwgxsesqtsrhhvb79220479FIONXYIQF.NUST
+                int backslashIndex = remaining.IndexOf(@"\");
+                string upuntilBackslash = remaining.Substring(0, backslashIndex);
+                int lastSpaceIndex = upuntilBackslash.LastIndexOf(" ");
+                filePathIndex = lastSpaceIndex + 1;
+            }
+            else // Edge log: file path stars with a drive letter and a colon
+            {
+                //From Datacenter Default T:\AMS-TSM1\ams-fsrv1\TalonStorage\Products\FAST\Build_1.0\build-49\Appliance-Install\release\Talon-0-9-0-0-49-WinLH-x64-release.exe
+                //From Datacenter Default T:\AMS-TSM1\127.0.0.1\FASTShare$\Scheduler\policydb.xml
+                filePathIndex = colonIndex - 1;
+            }
+            this.TransferType = remaining.Substring(0, filePathIndex - 1);
+            this.FilePath = remaining.Substring(filePathIndex);
 
             // statistics is like:
             // File Size[1674533] Bytes Transferred[1675165] Bytes Exchanged[1546799] Transfer Efficiency[7.62804]
