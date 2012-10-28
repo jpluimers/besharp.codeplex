@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using System.Text;
 
 namespace FASTLogToXml
 {
@@ -45,22 +46,51 @@ namespace FASTLogToXml
 
         static void processFile(string filePath)
         {
-            List<LogEntry> logEntries = new List<LogEntry>();
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                while (!reader.EndOfStream)
-                {
-                    string line = reader.ReadLine();
-
-                    if (LogEntry.IsValid(line))
-                        logEntries.Add(new LogEntry(line));
-                }
-            }
+            Console.WriteLine("Processing log file {0}", filePath);
+            List<LogEntry> logEntries = parseLogEntries(filePath);
 
             string logEntriesXmlFilePath = Path.ChangeExtension(filePath, ".xml");
+            Console.WriteLine("Exporting to XML file {0}", logEntriesXmlFilePath);
 
             serializeToXml(logEntries, logEntriesXmlFilePath);
             logEntries = deserializeFromXml(logEntriesXmlFilePath);
+
+            string logEntriesDelimitedFilePath = Path.ChangeExtension(filePath, ".PipeDelimited.txt");
+            Console.WriteLine("Exporting to Pipe (|) Delimited file {0}", logEntriesDelimitedFilePath);
+
+            StringBuilder pipeDelimited = new StringBuilder();
+            pipeDelimited.AppendFormatLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", "TimeStamp", "FileSizeBytes", "TransferredBytes", "ExchangedBytes", "TransferEfficiencyPercentage", "FileExtension", "FilePath");
+            foreach (LogEntry logEntry in logEntries)
+            {
+                pipeDelimited.AppendFormatLine("{0}|{1}|{2}|{3}|{4}|{5}|{6}", logEntry.TimeStamp, logEntry.FileSizeBytes, logEntry.TransferredBytes, logEntry.ExchangedBytes, logEntry.TransferEfficiencyPercentage, logEntry.FileExtension, logEntry.FilePath);
+            }
+            File.WriteAllText(logEntriesDelimitedFilePath, pipeDelimited.ToString());
+
+            string logEntriesByExtensionDelimitedFilePath = Path.ChangeExtension(filePath, ".ByExtension.PipeDelimited.txt");
+            Console.WriteLine("Exporting summary by extension to Pipe (|) Delimited file {0}", logEntriesDelimitedFilePath);
+
+            IEnumerable<IGrouping<string, LogEntry>> extensionGroups = from item in logEntries
+                                                                       group item by item.FileExtension.ToLower();
+
+            var extensionSummaries = from grouping in extensionGroups
+                                     select new
+                                         {
+                                             Extension = grouping.Key,
+                                             Count = grouping.Count(),
+                                             // there is no Sum for ulong/UInt64, so get it from our Extension
+                                             SumFileSizeBytes = grouping.Sum(logEntry => logEntry.FileSizeBytes),
+                                             SumExchangedBytes = grouping.Sum(logEntry => logEntry.ExchangedBytes),
+                                             SumTransferredBytes = grouping.Sum(logEntry => logEntry.TransferredBytes)
+                                         };
+
+            StringBuilder extensionSummariesPipeDelimited = new StringBuilder();
+
+            extensionSummariesPipeDelimited.AppendFormatLine("{0}|{1}|{2}|{3}|{4}", "Extension", "Count", "SumFileSizeBytes", "SumExchangedBytes", "SumTransferredBytes");
+            foreach (var extensionSummary in extensionSummaries)
+            {
+                extensionSummariesPipeDelimited.AppendFormatLine("{0}|{1}|{2}|{3}|{4}", extensionSummary.Extension, extensionSummary.Count, extensionSummary.SumFileSizeBytes, extensionSummary.SumExchangedBytes, extensionSummary.SumTransferredBytes);
+            }
+            File.WriteAllText(logEntriesByExtensionDelimitedFilePath, extensionSummariesPipeDelimited.ToString());
 
             /*
 # APPLIANCE ID: LON-BRIAN1
@@ -102,6 +132,35 @@ namespace FASTLogToXml
 
 (Fri Sep 14 08:33:50 2012)\tInfo\tFrom Datacenter Default T:\AMS-TSM1\ams-fsrv1\TalonStorage\Products\FAST\Guides\~$lon FAST 1.0 Quick Start Guide updated by Jaap Vers2.docx File Size[162] Bytes Transferred[162] Bytes Exchanged[162] Transfer Efficiency[0]
              */
+        }
+
+        private static List<LogEntry> parseLogEntries(string filePath)
+        {
+            List<LogEntry> logEntries = new List<LogEntry>();
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                int lineNumber = 0;
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+
+                    if (!string.IsNullOrEmpty(line))
+                    {
+                        if (LogEntry.IsValid(line))
+                        {
+                            LogEntry logEntry = new LogEntry(line);
+                            if (logEntry.IsValid())
+                                logEntries.Add(logEntry);
+                            else
+                                Console.WriteLine("Line {0} produces invalid logEntry: {1}{2}", lineNumber, Environment.NewLine, line);
+                        }
+                        else
+                            Console.WriteLine("Line {0} is invalid: {1}{2}", lineNumber, Environment.NewLine, line);
+                    }
+                    lineNumber++;
+                }
+            }
+            return logEntries;
         }
 
         private static List<LogEntry> deserializeFromXml(string logEntriesXmlFilePath)
