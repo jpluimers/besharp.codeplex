@@ -53,6 +53,24 @@ Date, Time, Type, Filename, Extension, Size, Transferred, Exchanged, Efficiency
             return true;
         }
 
+        public bool IsValid()
+        {
+                try
+                {
+                    string test = FileExtension;
+                    return true;
+                }
+                catch (ArgumentException)
+                {
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+        }
+        
+
         /// <summary>
         /// Parameterless constructor for XML Serialization
         /// </summary>
