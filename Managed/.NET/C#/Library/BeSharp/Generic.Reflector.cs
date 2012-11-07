@@ -113,7 +113,7 @@ namespace BeSharp.Generic
             MemberInfo[] memberInfos = typeof(T).GetMember(name, bindingFlags);
             int memberInfosLength = memberInfos.Length;
             if (memberInfosLength != 1)
-                throw new ArgumentException(string.Format("parameter {0} with name {1} should return 1 member with that name, but returns {2} members", "item", name, memberInfosLength));
+                throw new ArgumentException(string.Format("parameter {0} with name {1} should return 1 member with that name, but returns {2} members", Reflector.GetName(new { item }), name, memberInfosLength));
             MemberInfo memberInfo = memberInfos[0];
             object value;
             PropertyInfo propertyInfo = memberInfo as PropertyInfo;

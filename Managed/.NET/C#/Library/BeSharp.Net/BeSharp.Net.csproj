@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}</ProjectGuid>
+    <ProjectGuid>{10404ECA-C127-4887-AE59-A01484DB2A09}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeSharp</RootNamespace>
-    <AssemblyName>BeSharp</AssemblyName>
+    <RootNamespace>BeSharp.Net</RootNamespace>
+    <AssemblyName>BeSharp.Net</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -38,20 +38,13 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyHelper.cs" />
-    <Compile Include="BaseTextProcessor.cs" />
-    <Compile Include="Chars.cs" />
-    <Compile Include="ObjectExtensions.cs" />
-    <Compile Include="Collections\Generic\MultiDictionary.cs" />
-    <Compile Include="ConsoleProgram.cs" />
-    <Compile Include="Disposable.cs" />
-    <Compile Include="Generic.Exception.cs" />
-    <Compile Include="Platform.cs" />
+    <Compile Include="IPGlobalPropertiesExtensions.cs" />
+    <Compile Include="IResolveIPAdress.cs" />
+    <Compile Include="ResolveIPPortName.cs" />
+    <Compile Include="ResolveIPAdress.cs" />
+    <Compile Include="IResolveIPPortName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Generic.Reflector.cs" />
-    <Compile Include="Rot.cs" />
-    <Compile Include="StringExtensions.cs" />
-    <Compile Include="Generic.TypeCache.cs" />
+    <Compile Include="TcpConnectionInformationSummary.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
