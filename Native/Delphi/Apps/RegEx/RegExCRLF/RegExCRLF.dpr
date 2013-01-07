@@ -43,6 +43,12 @@ begin
     finally
       CStyleCRLFBuilder.Free;
     end;
+    RunRegEx(#13#10);
+    RunRegEx(^M^J);
+    RunRegEx('\x0D\x0A');
+    RunRegEx('\x000D\x000A');
+    RunRegEx('\u0D\u0A');
+    RunRegEx('\u000D\u000A');
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
@@ -61,5 +67,32 @@ CRLF: "\r\n"
 TRUE for matching sLineBreak with \r\n
 Replacing spaces in "Foo Bar" with "\r\n"
 Results in "Foo\r\nBar"
+CRLF: "
+"
+TRUE for matching sLineBreak with
+
+Replacing spaces in "Foo Bar" with "
+"
+Results in "Foo
+Bar"
+CRLF: "
+"
+TRUE for matching sLineBreak with
+
+Replacing spaces in "Foo Bar" with "
+"
+Results in "Foo
+Bar"
+CRLF: "\x0D\x0A"
+TRUE for matching sLineBreak with \x0D\x0A
+Replacing spaces in "Foo Bar" with "\x0D\x0A"
+Results in "Foo\x0D\x0ABar"
+CRLF: "\x000D\x000A"
+FALSE for matching sLineBreak with \x000D\x000A
+Replacing spaces in "Foo Bar" with "\x000D\x000A"
+Results in "Foo\x000D\x000ABar"
+CRLF: "\u0D\u0A"
+ERegularExpressionError: Error in regular expression at offset 1: PCRE does not
+support \L, \l, \N, \U, or \u
 
 *)
