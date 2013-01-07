@@ -12,6 +12,9 @@
         <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Apps\RegEx\RegExCRLF\RegExCRLF.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -47,14 +50,23 @@
     <Target Name="TypeIdentity:Make">
         <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
     </Target>
+    <Target Name="RegExCRLF">
+        <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj"/>
+    </Target>
+    <Target Name="RegExCRLF:Clean">
+        <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RegExCRLF:Make">
+        <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;TypeIdentity"/>
+        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;TypeIdentity;RegExCRLF"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;TypeIdentity:Clean"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;TypeIdentity:Clean;RegExCRLF:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;TypeIdentity:Make"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;TypeIdentity:Make;RegExCRLF:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
