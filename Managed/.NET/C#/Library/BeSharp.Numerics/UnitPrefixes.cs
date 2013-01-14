@@ -5,11 +5,11 @@ namespace BeSharp.Numerics
 {
     public static class UnitPrefixes
     {
-        // http://en.wikipedia.org/wiki/Binary_prefix
-
         public const UInt64 BitsPerByte = 8;
 
         #region Binary
+
+        // http://en.wikipedia.org/wiki/Binary_prefix
 
         // favour Int32/Int64 over UInt32/UInt64, as most C# APIs use uint
         public const Int32 kibi = 1024;
@@ -29,6 +29,7 @@ namespace BeSharp.Numerics
         public const Int64 Ei = exbi;
         public readonly static BigInteger Zi = zebi;
         public readonly static BigInteger Yi = yobi;
+
         //Prefixes for multiples of
         //bits (b) or bytes (B)
         //Decimal
@@ -53,9 +54,10 @@ namespace BeSharp.Numerics
         //10248			Yi	yobi
         #endregion
 
+        #region Metric
+
         // http://en.wikipedia.org/wiki/Metric_prefix
 
-        #region Metric
         public const Int32 one = 1;
         public const Int32 deca = 10;
         public const Int32 hecto = 100;
@@ -79,7 +81,7 @@ namespace BeSharp.Numerics
         public readonly static BigInteger Y = yotta;
 
         // use Decimal for fractions: http://csharpindepth.com/Articles/General/Decimal.aspx
-        public const Decimal deci = 1 / ((Decimal)deca);
+        public const Decimal deci = one / ((Decimal)deca);
         public const Decimal centi = deci / deca;
         public const Decimal milli = centi / deca;
         public const Decimal micro = milli / milli;
@@ -104,6 +106,7 @@ namespace BeSharp.Numerics
         //milli	m	0.001
         //micro	μ	0.000001
         //nano	n	0.000000001
+
         #endregion
     }
 }
