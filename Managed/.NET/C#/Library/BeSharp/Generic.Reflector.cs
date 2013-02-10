@@ -16,7 +16,30 @@ namespace BeSharp.Generic
         // http://abdullin.com/journal/2008/12/13/how-to-find-out-variable-or-parameter-name-in-c.html
         public static string GetName<T>(T item)
         {
-            string result = Generic.TypeCache<T>.Name;
+            string result = TypeCache<T>.Name;
+            return result;
+        }
+
+        public static IList<string> GetNames<T>(T items)
+        {
+            IList<string> result =
+                forEachNameAddToList<T>(items,
+                (list, name) => list.Add(name)
+                );
+
+            return result;
+        }
+
+        private static IList<string> forEachNameAddToList<T>(T items, Action<IList<string>, string> adder)
+        {
+            IList<string> result = new List<string>();
+
+            string[] names = TypeCache<T>.Names;
+            foreach (string name in names)
+            {
+                adder(result, name);
+            }
+
             return result;
         }
 
@@ -31,7 +54,7 @@ namespace BeSharp.Generic
         public static NameValuePairList GetNameValues<T>(T items)
         {
             NameValuePairList result = new NameValuePairList();
-            string[] names = Generic.TypeCache<T>.Names;
+            string[] names = TypeCache<T>.Names;
             foreach (string name in names)
             {
                 string value = getValueString(items, name);
@@ -45,28 +68,28 @@ namespace BeSharp.Generic
 
         public static string GetNameSeparatorValue<T>(T item, string separator = Colon)
         {
-            string name = Generic.TypeCache<T>.Name;
+            string name = TypeCache<T>.Name;
             string result = GetNameSeparatorValue<T>(item, separator, name);
             return result;
         }
 
-        public static List<string> GetNameSeparatorValues<T>(T items, string separator = Colon)
+        public static IList<string> GetNameSeparatorValues<T>(T items, string separator = Colon)
         {
-            List<string> result = new List<string>();
-
-            string[] names = Generic.TypeCache<T>.Names;
-            foreach (string name in names)
-            {
-                string nameSeparatorValue = GetNameSeparatorValue<T>(items, separator, name);
-                result.Add(nameSeparatorValue);
-            }
+            IList<string> result =
+                forEachNameAddToList<T>(items,
+                (list, name) =>
+                {
+                    string nameSeparatorValue = GetNameSeparatorValue<T>(items, separator, name);
+                    list.Add(nameSeparatorValue);
+                }
+                );
 
             return result;
         }
 
         public static string GetNameSeparatorTabValues<T>(T items, string separator = Colon)
         {
-            string[] names = Generic.TypeCache<T>.Names;
+            string[] names = TypeCache<T>.Names;
             int maxNameLength = 0;
             foreach (string name in names)
             {
@@ -134,6 +157,20 @@ namespace BeSharp.Generic
         {
             object value = getValue(item, name);
             string result = (null == value) ? string.Empty : value.ToString();
+            return result;
+        }
+
+        public static IList<string> GetValueStrings<T>(T items)
+        {
+            IList<string> result =
+                forEachNameAddToList<T>(items,
+                (list, name) =>
+                {
+                    string valueString = getValueString<T>(items, name);
+                    list.Add(valueString);
+                }
+                );
+
             return result;
         }
 
