@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNCInfo", "UNCInfo.csproj", "{C960DC55-AD00-49D6-A99E-5B7F66393645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Win32", "..\..\..\Library\BeSharp.Win32\BeSharp.Win32.csproj", "{15D87068-0025-46E7-A1FE-981225D02054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp", "..\..\..\Library\BeSharp\BeSharp.csproj", "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
+		SccProjectUniqueName0 = ..\\..\\..\\Library\\BeSharp.Win32\\BeSharp.Win32.csproj
+		SccProjectName0 = ../../../Library/BeSharp.Win32
+		SccLocalPath0 = ..\\..\\..\\Library\\BeSharp.Win32
+		SccProjectUniqueName1 = ..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
+		SccProjectName1 = ../../../Library/BeSharp
+		SccLocalPath1 = ..\\..\\..\\Library\\BeSharp
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = UNCInfo.csproj
+		SccLocalPath3 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Debug|x86.ActiveCfg = Debug|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Debug|x86.Build.0 = Debug|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Release|Any CPU.ActiveCfg = Release|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Release|x86.ActiveCfg = Release|x86
+		{C960DC55-AD00-49D6-A99E-5B7F66393645}.Release|x86.Build.0 = Release|x86
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|x86.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
