@@ -49,6 +49,21 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTest1TwentyDot1.cs" />
+    <Compile Include="UnitTest3TwentyDot3.cs" />
+    <Compile Include="UnitTest5TwentyDot5.cs" />
+    <Compile Include="UnitTest7TwentyDot7.cs" />
+    <Compile Include="UnitTest9TwentyDot9.cs" />
+    <Compile Include="UnitTestDot3Twenty3.cs" />
+    <Compile Include="UnitTestDot5Twenty5.cs" />
+    <Compile Include="UnitTestDot7Twenty7.cs" />
+    <Compile Include="UnitTestDot9Twenty9.cs" />
+    <Compile Include="UnitTestDot1Twenty1.cs" />
+    <Compile Include="UnitTestDot5Ten5.cs" />
+    <Compile Include="UnitTestDot9Ten9.cs" />
+    <Compile Include="UnitTestDot7Ten7.cs" />
+    <Compile Include="UnitTestDot1Ten1.cs" />
+    <Compile Include="UnitTestDot3Ten3.cs" />
     <Compile Include="UnitTestDot9.cs" />
     <Compile Include="UnitTestDot5.cs" />
     <Compile Include="UnitTestDot7.cs" />
