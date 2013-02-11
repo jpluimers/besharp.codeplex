@@ -15,6 +15,7 @@ namespace DecimalDoubleSingleTestProject
         ///UTA004: Illegal use of attribute on DecimalDoubleSingleTestProject.UnitTestBase.TestMethod_fd. The TestMethodAttribute can be defined only inside a class marked with the TestClass attribute.
         /// What we do instead is: keep the [TestClass] attribute on the Base class, 
         /// but skipp all tests when we are in exactly the base class.
+        /// http://stackoverflow.com/questions/2163247/c-sharp-check-for-exact-type/2163265#2163265
         /// </summary>
         public bool ThisIsExactlyUnitTestBase
         {
