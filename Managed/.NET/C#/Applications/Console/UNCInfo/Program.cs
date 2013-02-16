@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
 
+using BeSharp;
 using BeSharp.Generic;
 using BeSharp.Win32;
 
@@ -13,7 +14,12 @@ namespace UNCInfo
         static void Main(string[] args)
         {
             if (0 == args.Length)
-                Console.WriteLine("{0} UNC-path", "UNCInfo");
+            {
+                string executableName = AssemblyHelper.ExecutableName;
+                string applicationName = Path.GetFileNameWithoutExtension(executableName);
+                Console.WriteLine("{0} [UNC-path|Drive]...", applicationName);
+                Console.WriteLine(@"Example: {0} C: \\{1}\Users", applicationName, Environment.MachineName);
+            }
             else
             {
                 string header = string.Empty;
