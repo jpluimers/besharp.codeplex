@@ -12,13 +12,13 @@ Global
 		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
-		SccProjectUniqueName0 = ..\\..\\..\\Library\\BeSharp.Win32\\BeSharp.Win32.csproj
-		SccProjectName0 = ../../../Library/BeSharp.Win32
-		SccLocalPath0 = ..\\..\\..\\Library\\BeSharp.Win32
-		SccProjectUniqueName1 = ..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
-		SccProjectName1 = ../../../Library/BeSharp
-		SccLocalPath1 = ..\\..\\..\\Library\\BeSharp
-		SccLocalPath2 = .
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\Library\\BeSharp.Win32\\BeSharp.Win32.csproj
+		SccProjectName1 = ../../../Library/BeSharp.Win32
+		SccLocalPath1 = ..\\..\\..\\Library\\BeSharp.Win32
+		SccProjectUniqueName2 = ..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
+		SccProjectName2 = ../../../Library/BeSharp
+		SccLocalPath2 = ..\\..\\..\\Library\\BeSharp
 		SccProjectUniqueName3 = UNCInfo.csproj
 		SccLocalPath3 = .
 	EndGlobalSection

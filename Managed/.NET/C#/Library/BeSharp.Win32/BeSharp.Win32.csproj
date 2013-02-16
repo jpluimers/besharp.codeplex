@@ -39,6 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BooleanExtensions.cs" />
+    <Compile Include="FileSystemFlags.cs" />
+    <Compile Include="VolumeInformation.cs" />
     <Compile Include="DiskFreeSpaceEx.cs" />
     <Compile Include="DiskInfo.cs" />
     <Compile Include="Kernel32Dll.cs" />
