@@ -1,5 +1,7 @@
 ﻿using System.Text;
 using System.IO;
+using System.ComponentModel;
+
 namespace BeSharp.Win32
 {
     public class DiskInfo
@@ -17,12 +19,13 @@ namespace BeSharp.Win32
             ulong totalNumberOfBytes;
             ulong totalNumberOfFreeBytes;
 
-            DiskFreeSpaceEx result;
             if (Kernel32Dll.GetDiskFreeSpaceEx(directoryName, out freeBytesAvailable, out totalNumberOfBytes, out totalNumberOfFreeBytes))
-                result = new DiskFreeSpaceEx(directoryName, freeBytesAvailable, totalNumberOfBytes, totalNumberOfFreeBytes);
+            {
+                DiskFreeSpaceEx result = new DiskFreeSpaceEx(directoryName, freeBytesAvailable, totalNumberOfBytes, totalNumberOfFreeBytes);
+                return result;
+            }
             else
-                result = null;
-            return result;
+                throw new Win32Exception();
         }
 
         public static VolumeInformation GetVolumeInformation(string rootPathName)
@@ -39,12 +42,13 @@ namespace BeSharp.Win32
             volumeName = new StringBuilder(Kernel32Dll.MAX_PATH_buffersize);
             fileSystemName = new StringBuilder(Kernel32Dll.MAX_PATH_buffersize);
 
-            VolumeInformation result;
             if (Kernel32Dll.GetVolumeInformation(rootPathName, volumeName, volumeName.Capacity, out volumeSerialNumber, out maximumComponentLength, out fileSystemFlags, fileSystemName, fileSystemName.Capacity))
-                result = new VolumeInformation(rootPathName, volumeName.ToString(), volumeSerialNumber, maximumComponentLength, fileSystemFlags, fileSystemName.ToString());
+            {
+                VolumeInformation result = new VolumeInformation(rootPathName, volumeName.ToString(), volumeSerialNumber, maximumComponentLength, fileSystemFlags, fileSystemName.ToString());
+                return result;
+            }
             else
-                result = null;
-            return result;
+                throw new Win32Exception();
         }
     }
 }
