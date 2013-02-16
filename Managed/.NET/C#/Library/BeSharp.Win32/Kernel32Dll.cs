@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace BeSharp.Win32
 {
     internal class Kernel32Dll
     {
         private const string kernel32_dll = "kernel32.dll";
-
-
+        internal const int MAX_PATH = 260;
+        internal const int MAX_PATH_buffersize = MAX_PATH + 1;
 
         /// <summary>
         /// http://msdn.microsoft.com/library/windows/desktop/ms683152
@@ -48,10 +49,23 @@ namespace BeSharp.Win32
         /// <returns>Boolean indicating if the function succeeds.</returns>
         [DllImport(kernel32_dll, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern bool GetDiskFreeSpaceEx(
-            string lpDirectoryName, 
-            out long lpFreeBytesAvailable, 
-            out long lpTotalNumberOfBytes, 
-            out long lpTotalNumberOfFreeBytes
+            string lpDirectoryName,
+            out ulong lpFreeBytesAvailable,
+            out ulong lpTotalNumberOfBytes,
+            out ulong lpTotalNumberOfFreeBytes
             );
+
+        // http://msdn.microsoft.com/en-us/library/windows/desktop/aa364993
+        [DllImport(kernel32_dll, SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern bool GetVolumeInformation(
+            string lpRootPathName,
+            StringBuilder lpVolumeNameBuffer,
+            int nVolumeNameSize,
+            out uint lpVolumeSerialNumber,
+            out uint lpMaximumComponentLength,
+            out FileSystemFlags lpFileSystemFlags,
+            StringBuilder lpFileSystemNameBuffer,
+            int nFileSystemNameSize
+      );
     }
 }

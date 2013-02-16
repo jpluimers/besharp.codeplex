@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using BeSharp.Generic;
+using BeSharp.Win32;
 
 namespace UNCInfo
 {
@@ -18,41 +20,46 @@ namespace UNCInfo
                 StringBuilder result = new StringBuilder();
                 foreach (string arg in args)
                 {
-                    // GetDriveInfo does not work with UNC paths:
-                    //System.ArgumentException was unhandled
-                    //HResult=-2147024809
-                    //Message=Object must be a root directory ("C:\") or a drive letter ("C").
-                    //Source=mscorlib
-                    //StackTrace:
-                    //     at System.IO.DriveInfo..ctor(String driveName)
-                    //     at Microsoft.VisualBasic.FileIO.FileSystem.GetDriveInfo(String drive)
-                    //System.IO.DriveInfo driveInfo = Microsoft.VisualBasic.FileIO.FileSystem.GetDriveInfo(arg);
-                    //Console.WriteLine("path {0}, available free {1}, total free {1}", arg, driveInfo.AvailableFreeSpace, driveInfo.TotalFreeSpace);
-                    //System.IO.DriveInfo driveInfo = Microsoft.VisualBasic.FileIO.FileSystem.GetDriveInfo(arg);
-                    //Console.WriteLine("path {0}, available free {1}, total free {1}", arg, driveInfo.AvailableFreeSpace, driveInfo.TotalFreeSpace);
-                    BeSharp.Win32.DiskFreeSpaceEx diskFreeSpaceEx = BeSharp.Win32.DiskInfo.GetDiskFreeSpaceEx(arg);
+                    DiskFreeSpaceEx diskFreeSpaceEx = DiskInfo.GetDiskFreeSpaceEx(arg);
                     if (null != diskFreeSpaceEx)
                     {
                         try
                         {
-                            const string comma = ",";
-                            var values = new { diskFreeSpaceEx.DirectoryName, diskFreeSpaceEx.FreeBytesAvailable, diskFreeSpaceEx.TotalNumberOfBytes, diskFreeSpaceEx.TotalNumberOfFreeBytes };
+                            VolumeInformation volumeInformation = DiskInfo.GetVolumeInformation(arg);
+                            if (null == volumeInformation)
+                                volumeInformation = new VolumeInformation(string.Empty, string.Empty, 0, 0, 0, string.Empty);
+                            var values = new
+                            {
+                                diskFreeSpaceEx.DirectoryName,
+                                diskFreeSpaceEx.FreeBytesAvailable,
+                                diskFreeSpaceEx.TotalNumberOfBytes,
+                                diskFreeSpaceEx.TotalNumberOfFreeBytes,
+                                volumeInformation.VolumeSerialNumber,
+                                volumeInformation.MaximumComponentLength,
+                                volumeInformation.FileSystemFlags,
+                                volumeInformation.FileSystemName,
+                                volumeInformation.VolumeName,
+                            };
                             IList<string> valueStrings = Reflector.GetValueStrings(values);
-                            string line = string.Join(comma, valueStrings);
-                            result.Append(line);
+
+                            const string separator = ";";
+
+                            string line = string.Join(separator, valueStrings);
+                            result.AppendLine(line);
+
                             IList<string> names = Reflector.GetNames(values);
-                            header = string.Join(comma, names);
+                            header = string.Join(separator, names);
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine("Exception processing '{0}': {1}", arg, ex);
                         }
                     }
-                    if (result.Length > 0)
-                    {
-                        Console.WriteLine(header);
-                        Console.Write(result);
-                    }
+                }
+                if (result.Length > 0)
+                {
+                    Console.WriteLine(header);
+                    Console.Write(result);
                 }
             }
         }
