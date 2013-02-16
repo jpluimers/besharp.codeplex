@@ -55,7 +55,20 @@ namespace BeSharp.Win32
             out ulong lpTotalNumberOfFreeBytes
             );
 
-        // http://msdn.microsoft.com/en-us/library/windows/desktop/aa364993
+        /// <summary>
+        /// http://msdn.microsoft.com/en-us/library/windows/desktop/aa364993
+        /// </summary>
+        /// <param name="lpRootPathName">Root directory of the volume.
+        /// If this parameter is NULL, the function uses the root of the current disk.
+        /// If this parameter is a Drive or UNC name, it must include a trailing backslash.</param>
+        /// <param name="lpVolumeNameBuffer">buffer that receives the name of a specified volume</param>
+        /// <param name="nVolumeNameSize">length of a volume name buffer, in TCHARs; max buffer size is MAX_PATH+1</param>
+        /// <param name="lpVolumeSerialNumber">volume serial number</param>
+        /// <param name="lpMaximumComponentLength">maximum length, in TCHARs, of a file name component that a specified file system supports</param>
+        /// <param name="lpFileSystemFlags">flags associated with the specified file system</param>
+        /// <param name="lpFileSystemNameBuffer">buffer that receives the name of the file system</param>
+        /// <param name="nFileSystemNameSize">length of the file system name buffer, in TCHARs; max buffer size is MAX_PATH+1</param>
+        /// <returns></returns>
         [DllImport(kernel32_dll, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern bool GetVolumeInformation(
             string lpRootPathName,
