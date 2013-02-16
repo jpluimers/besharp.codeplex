@@ -12,7 +12,7 @@ namespace BeSharp.Win32
         /// <param name="directoryName">A directory on the disk.
         /// If this parameter is NULL, the function uses the root of the current disk.
         /// If this parameter is a UNC name, it must include a trailing backslash.</param>
-        /// <returns>DiskFreeSpaceEx on success, null on error.</returns>
+        /// <returns>DiskFreeSpaceEx on success, Win32Exception on error.</returns>
         public static DiskFreeSpaceEx GetDiskFreeSpaceEx(string directoryName)
         {
             ulong freeBytesAvailable;
@@ -28,6 +28,13 @@ namespace BeSharp.Win32
                 throw new Win32Exception();
         }
 
+        /// <summary>
+        /// http://msdn.microsoft.com/en-us/library/windows/desktop/aa364993
+        /// </summary>
+        /// <param name="rootPathName">Root directory of the volume.
+        /// If this parameter is NULL, the function uses the root of the current disk.
+        /// If this parameter is a Drive or UNC name, it must include a trailing backslash.</param>
+        /// <returns>DiskFreeSpaceEx on success, Win32Exception on error.</returns>
         public static VolumeInformation GetVolumeInformation(string rootPathName)
         {
             StringBuilder volumeName;

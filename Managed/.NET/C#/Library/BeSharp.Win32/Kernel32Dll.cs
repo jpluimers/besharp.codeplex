@@ -68,7 +68,7 @@ namespace BeSharp.Win32
         /// <param name="lpFileSystemFlags">flags associated with the specified file system</param>
         /// <param name="lpFileSystemNameBuffer">buffer that receives the name of the file system</param>
         /// <param name="nFileSystemNameSize">length of the file system name buffer, in TCHARs; max buffer size is MAX_PATH+1</param>
-        /// <returns></returns>
+        /// <returns>Boolean indicating if the function succeeds.</returns>
         [DllImport(kernel32_dll, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern bool GetVolumeInformation(
             string lpRootPathName,
