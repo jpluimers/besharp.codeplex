@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssemblyHelperConsoleApplication", "AssemblyHelperConsoleApplication.csproj", "{E799B704-D881-4A81-B7DB-72E20209882F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp", "..\..\..\Library\BeSharp\BeSharp.csproj", "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AssemblyHelperWebSite", "..\..\Web\AssemblyHelperWebSite", "{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}|BeSharp.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/AssemblyHelperWebSite"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\Web\AssemblyHelperWebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AssemblyHelperWebSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/AssemblyHelperWebSite"
+		Release.AspNetCompiler.PhysicalPath = "..\..\Web\AssemblyHelperWebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\AssemblyHelperWebSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1491"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
+		SccProjectUniqueName0 = ..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
+		SccProjectName0 = ../../../Library/BeSharp
+		SccLocalPath0 = ..\\..\\..\\Library\\BeSharp
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = AssemblyHelperConsoleApplication.csproj
+		SccLocalPath2 = .
+		SccWebProject3 = true
+		SccProjectUniqueName3 = ..\\..\\Web\\AssemblyHelperWebSite
+		SccProjectName3 = ../../Web/AssemblyHelperWebSite
+		SccLocalPath3 = ..\\..\\Web\\AssemblyHelperWebSite
+		SccProjectEnlistmentChoice3 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Debug|x86.ActiveCfg = Debug|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Debug|x86.Build.0 = Debug|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Release|Any CPU.ActiveCfg = Release|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Release|x86.ActiveCfg = Release|x86
+		{E799B704-D881-4A81-B7DB-72E20209882F}.Release|x86.Build.0 = Release|x86
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|x86.ActiveCfg = Release|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|x86.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
