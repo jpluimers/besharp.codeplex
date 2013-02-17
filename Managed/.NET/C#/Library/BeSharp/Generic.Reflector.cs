@@ -7,7 +7,10 @@ using System.Diagnostics;
 using System.Text;
 
 using NameValuePair = System.Collections.Generic.KeyValuePair<string, string>;
+// you cannot do this:
+// using NameValuePairList = System.Collections.Generic.List<NameValuePair>;
 using NameValuePairList = System.Collections.Generic.List<System.Collections.Generic.KeyValuePair<string, string>>;
+using NameValuePairIList = System.Collections.Generic.IList<System.Collections.Generic.KeyValuePair<string, string>>;
 
 namespace BeSharp.Generic
 {
@@ -51,9 +54,9 @@ namespace BeSharp.Generic
             return result;
         }
 
-        public static NameValuePairList GetNameValues<T>(T items)
+        public static NameValuePairIList GetNameValues<T>(T items)
         {
-            NameValuePairList result = new NameValuePairList();
+            NameValuePairIList result = new NameValuePairList();
             string[] names = TypeCache<T>.Names;
             foreach (string name in names)
             {
