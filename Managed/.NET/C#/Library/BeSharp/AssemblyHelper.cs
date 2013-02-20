@@ -91,6 +91,15 @@ namespace BeSharp
             }
         }
 
+        public static bool HaveEntryAssembly
+        {
+            get
+            {
+                bool result = (null != entryAssembly);
+                return result;
+            }
+        }
+
         public static string EntryAssemblyDirectory
         {
             get
