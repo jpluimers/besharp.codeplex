@@ -91,6 +91,9 @@ namespace BeSharp
             }
         }
 
+        /// <summary>
+        /// True means the process is a full .NET process. False means the host is not .NET (like IIS, WebDev.WebServer40.exe, or Office Add-In)
+        /// </summary>
         public static bool HaveEntryAssembly
         {
             get
