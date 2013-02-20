@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Web\AssemblyHelperWebSite\AssemblyHelperNameValues.cs">
+    <Compile Include="..\..\Web\AssemblyHelperWebSite\App_Code\AssemblyHelperNameValues.cs">
       <Link>AssemblyHelperNameValues.cs</Link>
     </Compile>
     <Compile Include="Program.cs" />
