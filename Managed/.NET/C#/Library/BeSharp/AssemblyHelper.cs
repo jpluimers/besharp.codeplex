@@ -68,6 +68,15 @@ namespace BeSharp
             return result;
         }
 
+        private static Assembly entryAssembly
+        {
+            get
+            {
+                Assembly  result = Assembly.GetEntryAssembly();
+                return result;
+            }
+        }
+
         public static string EntryAssemblyPath
         {
             get
@@ -77,7 +86,6 @@ namespace BeSharp
                 // or from a WCF process, or as an addin
                 // http://stackoverflow.com/a/2848696/29290
                 // http://stackoverflow.com/a/616606/29290
-                Assembly entryAssembly = Assembly.GetEntryAssembly();
                 string result = entryAssembly.GetFirstModuleFullyQualifiedName();
                 return result;
             }
@@ -87,8 +95,16 @@ namespace BeSharp
         {
             get
             {
-                Assembly entryAssembly = Assembly.GetEntryAssembly();
                 string result = entryAssembly.GetDirectoryName();
+                return result;
+            }
+        }
+
+        private static Assembly executingAssembly
+        {
+            get
+            {
+                Assembly result = Assembly.GetExecutingAssembly();
                 return result;
             }
         }
@@ -97,7 +113,6 @@ namespace BeSharp
         {
             get
             {
-                Assembly executingAssembly = Assembly.GetExecutingAssembly();
                 string result = executingAssembly.GetFirstModuleFullyQualifiedName();
                 return result;
             }
@@ -107,7 +122,6 @@ namespace BeSharp
         {
             get
             {
-                Assembly executingAssembly = Assembly.GetExecutingAssembly();
                 string result = executingAssembly.GetDirectoryName();
                 return result;
             }
@@ -117,6 +131,7 @@ namespace BeSharp
         {
             get
             {
+                // cannot promote callingAssembly to property, as it would get the wrong caller
                 Assembly callingAssembly = Assembly.GetCallingAssembly();
                 string result = callingAssembly.GetFirstModuleFullyQualifiedName();
                 return result;
@@ -127,6 +142,7 @@ namespace BeSharp
         {
             get
             {
+                // cannot promote callingAssembly to property, as it would get the wrong caller
                 Assembly callingAssembly = Assembly.GetCallingAssembly();
                 string result = callingAssembly.GetDirectoryName();
                 return result;
