@@ -19,6 +19,7 @@ namespace AssemblyHelperHelper
                     AssemblyHelper.ExecutableName,
                     AssemblyHelper.ExecutableDirectory,
                     AssemblyHelper.ExecutablePath,
+                    AssemblyHelper.HaveEntryAssembly,
                     AssemblyHelper.EntryAssemblyPath,
                     AssemblyHelper.EntryAssemblyDirectory,
                     AssemblyHelper.ExecutingAssemblyPath,
