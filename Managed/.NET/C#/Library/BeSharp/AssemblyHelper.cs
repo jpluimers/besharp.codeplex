@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace BeSharp
 {
-    public class AssemblyHelper
+    public static class AssemblyHelper
     {
         public static string ExecutableDirectory
         {
@@ -72,22 +72,64 @@ namespace BeSharp
         {
             get
             {
-                Assembly assembly = Assembly.GetEntryAssembly();
                 // http://msdn.microsoft.com/en-us/library/system.reflection.assembly.getentryassembly.aspx
-                // might be null when started from an unmanaged application.
+                // assembly might be null when started from an unmanaged application.
                 // or from a WCF process, or as an addin
                 // http://stackoverflow.com/a/2848696/29290
                 // http://stackoverflow.com/a/616606/29290
-                if (null == assembly)
-                    return string.Empty;
-                else
-                {
-                    string result;
-                    Module[] modules = assembly.GetModules();
-                    Module firstModule = modules[0];
-                    result = firstModule.FullyQualifiedName;
-                    return result;
-                }
+                Assembly entryAssembly = Assembly.GetEntryAssembly();
+                string result = entryAssembly.GetFirstModuleFullyQualifiedName();
+                return result;
+            }
+        }
+
+        public static string EntryAssemblyDirectory
+        {
+            get
+            {
+                Assembly entryAssembly = Assembly.GetEntryAssembly();
+                string result = entryAssembly.GetDirectoryName();
+                return result;
+            }
+        }
+
+        public static string ExecutingAssemblyPath
+        {
+            get
+            {
+                Assembly executingAssembly = Assembly.GetExecutingAssembly();
+                string result = executingAssembly.GetFirstModuleFullyQualifiedName();
+                return result;
+            }
+        }
+
+        public static string ExecutingAssemblyDirectory
+        {
+            get
+            {
+                Assembly executingAssembly = Assembly.GetExecutingAssembly();
+                string result = executingAssembly.GetDirectoryName();
+                return result;
+            }
+        }
+
+        public static string CallingAssemblyPath
+        {
+            get
+            {
+                Assembly callingAssembly = Assembly.GetCallingAssembly();
+                string result = callingAssembly.GetFirstModuleFullyQualifiedName();
+                return result;
+            }
+        }
+
+        public static string CallingAssemblyDirectory
+        {
+            get
+            {
+                Assembly callingAssembly = Assembly.GetCallingAssembly();
+                string result = callingAssembly.GetDirectoryName();
+                return result;
             }
         }
 
@@ -108,5 +150,32 @@ namespace BeSharp
                 return result;
             }
         }
+
+        #region Extension methods
+
+        public static string GetDirectoryName(this Assembly assembly)
+        {
+            string assemblyPath = GetFirstModuleFullyQualifiedName(assembly);
+
+            if (string.IsNullOrEmpty(assemblyPath))
+                return string.Empty;
+
+            string result = Path.GetDirectoryName(assemblyPath);
+            return result;
+        }
+
+        public static string GetFirstModuleFullyQualifiedName(this Assembly assembly)
+        {
+            if (null == assembly)
+                return string.Empty;
+
+            string result;
+            Module[] modules = assembly.GetModules();
+            Module firstModule = modules[0];
+            result = firstModule.FullyQualifiedName;
+            return result;
+        }
+
+        #endregion
     }
 }
