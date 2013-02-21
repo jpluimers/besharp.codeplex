@@ -26,6 +26,7 @@ namespace AssemblyHelperHelper
                     AssemblyHelper.ExecutingAssemblyDirectory,
                     AssemblyHelper.CallingAssemblyPath,
                     AssemblyHelper.CallingAssemblyDirectory,
+                    AssemblyHelper.CurrentDomainBaseDirectory,
                     CurrentProcessMainModuleFileName = AssemblyHelper.GetCurrentProcessMainModuleFileName(),
                     CurrentProcessMainModuleFileNameWithoutVsHost = AssemblyHelper.GetCurrentProcessMainModuleFileName(true),
                     AssemblyHelper.DotNetVersion,

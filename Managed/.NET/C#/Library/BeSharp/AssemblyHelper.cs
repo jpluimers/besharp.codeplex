@@ -161,6 +161,16 @@ namespace BeSharp
             }
         }
 
+        public static string CurrentDomainBaseDirectory
+        {
+            get
+            {
+                string result = AppDomain.CurrentDomain.BaseDirectory;
+                return result;
+            }
+        }
+        
+
         public static string DotNetVersionString
         {
             get
