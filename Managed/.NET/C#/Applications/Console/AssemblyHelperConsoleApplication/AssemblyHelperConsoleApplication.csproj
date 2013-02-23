@@ -54,6 +54,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Library\BeSharp.Configuration\BeSharp.Configuration.csproj">
+      <Project>{CCAA90E2-CCB9-497D-B619-6C273AB015FD}</Project>
+      <Name>BeSharp.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Library\BeSharp.Core\BeSharp.Core.csproj">
+      <Project>{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}</Project>
+      <Name>BeSharp.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Library\BeSharp\BeSharp.csproj">
       <Project>{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}</Project>
       <Name>BeSharp</Name>
