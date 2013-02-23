@@ -199,7 +199,7 @@ namespace BeSharp.IO.Ports
 
         public override string ToString()
         {
-            List<string> nameSeparatorValues = Reflector.GetNameSeparatorValues(new { DeviceKeyName, Class, DeviceDesc, FriendlyName, Mfg, PortName, UpperFilters, Service });
+            IList<string> nameSeparatorValues = Reflector.GetNameSeparatorValues(new { DeviceKeyName, Class, DeviceDesc, FriendlyName, Mfg, PortName, UpperFilters, Service });
             string result = string.Join("; ", nameSeparatorValues);
             return result;
         }

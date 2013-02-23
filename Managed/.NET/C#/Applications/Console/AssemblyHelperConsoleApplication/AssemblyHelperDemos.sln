@@ -12,7 +12,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AssemblyHelperWebSite", "..
 		SccLocalPath = "SAK"
 		SccProvider = "SAK"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}|BeSharp.dll;"
+		ProjectReferences = "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}|BeSharp.dll;{CCAA90E2-CCB9-497D-B619-6C273AB015FD}|BeSharp.Configuration.dll;{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}|BeSharp.IO.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/AssemblyHelperWebSite"
 		Debug.AspNetCompiler.PhysicalPath = "..\..\Web\AssemblyHelperWebSite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AssemblyHelperWebSite\"
@@ -31,15 +31,21 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AssemblyHelperWebSite", "..
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.IO", "..\..\..\Library\BeSharp.IO\BeSharp.IO.csproj", "{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Configuration", "..\..\..\Library\BeSharp.Configuration\BeSharp.Configuration.csproj", "{CCAA90E2-CCB9-497D-B619-6C273AB015FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Core", "..\..\..\Library\BeSharp.Core\BeSharp.Core.csproj", "{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 7
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
-		SccProjectUniqueName0 = ..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
-		SccProjectName0 = ../../../Library/BeSharp
-		SccLocalPath0 = ..\\..\\..\\Library\\BeSharp
-		SccLocalPath1 = .
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\..\\..\\Library\\BeSharp\\BeSharp.csproj
+		SccProjectName1 = ../../../Library/BeSharp
+		SccLocalPath1 = ..\\..\\..\\Library\\BeSharp
 		SccProjectUniqueName2 = AssemblyHelperConsoleApplication.csproj
 		SccLocalPath2 = .
 		SccWebProject3 = true
@@ -47,6 +53,15 @@ Global
 		SccProjectName3 = ../../Web/AssemblyHelperWebSite
 		SccLocalPath3 = ..\\..\\Web\\AssemblyHelperWebSite
 		SccProjectEnlistmentChoice3 = 2
+		SccProjectUniqueName4 = ..\\..\\..\\Library\\BeSharp.IO\\BeSharp.IO.csproj
+		SccProjectName4 = ../../../Library/BeSharp.IO
+		SccLocalPath4 = ..\\..\\..\\Library\\BeSharp.IO
+		SccProjectUniqueName5 = ..\\..\\..\\Library\\BeSharp.Configuration\\BeSharp.Configuration.csproj
+		SccProjectName5 = ../../../Library/BeSharp.Configuration
+		SccLocalPath5 = ..\\..\\..\\Library\\BeSharp.Configuration
+		SccProjectUniqueName6 = ..\\..\\..\\Library\\BeSharp.Core\\BeSharp.Core.csproj
+		SccProjectName6 = ../../../Library/BeSharp.Core
+		SccLocalPath6 = ..\\..\\..\\Library\\BeSharp.Core
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +102,36 @@ Global
 		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
 		{186C8645-E1F6-4EB0-B14B-84FF9ECA6DFC}.Release|x86.ActiveCfg = Debug|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

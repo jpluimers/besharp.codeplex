@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-using BeSharp;
+using BeSharp.Configuration;
 using BeSharp.Generic;
 
 namespace AssemblyHelperHelper
@@ -27,6 +27,8 @@ namespace AssemblyHelperHelper
                     AssemblyHelper.CallingAssemblyPath,
                     AssemblyHelper.CallingAssemblyDirectory,
                     AssemblyHelper.CurrentDomainBaseDirectory,
+                    AssemblyHelper.CurrentDomainRelativeSearchPath,
+                    AssemblyHelper.DeploymentPath,
                     CurrentProcessMainModuleFileName = AssemblyHelper.GetCurrentProcessMainModuleFileName(),
                     CurrentProcessMainModuleFileNameWithoutVsHost = AssemblyHelper.GetCurrentProcessMainModuleFileName(true),
                     AssemblyHelper.DotNetVersion,

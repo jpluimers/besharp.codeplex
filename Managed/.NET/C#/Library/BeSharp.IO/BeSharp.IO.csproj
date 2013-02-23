@@ -36,17 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CurrentControlSetDevice.cs" />
     <Compile Include="DeviceRegistryEnumerator.cs" />
     <Compile Include="DirectoryHelper.cs" />
+    <Compile Include="PathHelper.cs" />
     <Compile Include="Ports\ParallelPortDevice.cs" />
     <Compile Include="Ports\SerialPortDevice.cs" />
     <Compile Include="FileHelper.cs" />
