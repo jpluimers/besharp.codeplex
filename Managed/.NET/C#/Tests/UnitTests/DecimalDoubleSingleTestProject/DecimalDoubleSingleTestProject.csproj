@@ -49,6 +49,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UnitTestPi.cs" />
     <Compile Include="UnitTest1TwentyDot1.cs" />
     <Compile Include="UnitTest3TwentyDot3.cs" />
     <Compile Include="UnitTest5TwentyDot5.cs" />
