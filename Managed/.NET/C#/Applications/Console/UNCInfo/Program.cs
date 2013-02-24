@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-using BeSharp;
+using BeSharp.Configuration;
 using BeSharp.Generic;
 using BeSharp.Win32;
 

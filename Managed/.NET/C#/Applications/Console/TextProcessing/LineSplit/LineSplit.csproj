@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C960DC55-AD00-49D6-A99E-5B7F66393645}</ProjectGuid>
+    <ProjectGuid>{35821749-FA0A-4022-A27E-2EFBE4E3ADF0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UNCInfo</RootNamespace>
-    <AssemblyName>UNCInfo</AssemblyName>
+    <RootNamespace>LineSplit</RootNamespace>
+    <AssemblyName>LineSplit</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -51,17 +51,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Library\BeSharp.Configuration\BeSharp.Configuration.csproj">
-      <Project>{CCAA90E2-CCB9-497D-B619-6C273AB015FD}</Project>
-      <Name>BeSharp.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Library\BeSharp.Win32\BeSharp.Win32.csproj">
-      <Project>{15D87068-0025-46E7-A1FE-981225D02054}</Project>
-      <Name>BeSharp.Win32</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Library\BeSharp\BeSharp.csproj">
-      <Project>{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}</Project>
-      <Name>BeSharp</Name>
+    <ProjectReference Include="..\..\..\..\Library\BeSharp.Numerics\BeSharp.Numerics.csproj">
+      <Project>{C1753644-73EF-4597-B9CE-CA152374E8BB}</Project>
+      <Name>BeSharp.Numerics</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

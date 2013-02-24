@@ -67,6 +67,10 @@
     <None Include="CategoryFrequencyDistribution.graph.xlsx" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Library\BeSharp.Core\BeSharp.Core.csproj">
+      <Project>{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}</Project>
+      <Name>BeSharp.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Library\BeSharp\BeSharp.csproj">
       <Project>{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}</Project>
       <Name>BeSharp</Name>
