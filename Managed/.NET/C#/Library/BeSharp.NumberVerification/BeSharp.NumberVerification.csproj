@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BeSharp\BeSharp.csproj">
+    <ProjectReference Include="..\BeSharp\BeSharp.csproj">
       <Project>{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}</Project>
       <Name>BeSharp</Name>
     </ProjectReference>

@@ -3,25 +3,65 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp", "BeSharp\BeSharp.csproj", "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.NumberVerification", "BeSharp.NumberVerification\BeSharp.NumberVerification\BeSharp.NumberVerification.csproj", "{381C79C9-E911-438A-BB98-50C37494756B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.NumberVerification", "BeSharp.NumberVerification\BeSharp.NumberVerification.csproj", "{381C79C9-E911-438A-BB98-50C37494756B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.IO", "BeSharp.IO\BeSharp.IO.csproj", "{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Configuration", "BeSharp.Configuration\BeSharp.Configuration.csproj", "{CCAA90E2-CCB9-497D-B619-6C273AB015FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Core", "BeSharp.Core\BeSharp.Core.csproj", "{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Linq", "BeSharp.Linq\BeSharp.Linq.csproj", "{5E7E41D2-C7D2-4AA3-9EBC-BA9D764514A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Net", "BeSharp.Net\BeSharp.Net.csproj", "{10404ECA-C127-4887-AE59-A01484DB2A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Numerics", "BeSharp.Numerics\BeSharp.Numerics.csproj", "{C1753644-73EF-4597-B9CE-CA152374E8BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Win32", "BeSharp.Win32\BeSharp.Win32.csproj", "{15D87068-0025-46E7-A1FE-981225D02054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Windows.Forms", "BeSharp.Windows.Forms\BeSharp.Windows.Forms.csproj", "{0527903D-36B4-46D3-A99F-2D3B48D4939F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.Windows.Forms.DataVisualization", "BeSharp.Windows.Forms.DataVisualization\BeSharp.Windows.Forms.DataVisualization.csproj", "{DE86C769-F09E-49C4-A61C-F9D93B262B29}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 12
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = BeSharp\\BeSharp.csproj
 		SccProjectName1 = BeSharp
 		SccLocalPath1 = BeSharp
-		SccProjectUniqueName2 = BeSharp.NumberVerification\\BeSharp.NumberVerification\\BeSharp.NumberVerification.csproj
-		SccProjectName2 = BeSharp.NumberVerification/BeSharp.NumberVerification
-		SccLocalPath2 = BeSharp.NumberVerification\\BeSharp.NumberVerification
-		SccProjectUniqueName3 = BeSharp.IO\\BeSharp.IO.csproj
-		SccProjectName3 = BeSharp.IO
-		SccLocalPath3 = BeSharp.IO
+		SccProjectUniqueName2 = BeSharp.IO\\BeSharp.IO.csproj
+		SccProjectName2 = BeSharp.IO
+		SccLocalPath2 = BeSharp.IO
+		SccProjectUniqueName3 = BeSharp.Configuration\\BeSharp.Configuration.csproj
+		SccProjectName3 = BeSharp.Configuration
+		SccLocalPath3 = BeSharp.Configuration
+		SccProjectUniqueName4 = BeSharp.Core\\BeSharp.Core.csproj
+		SccProjectName4 = BeSharp.Core
+		SccLocalPath4 = BeSharp.Core
+		SccProjectUniqueName5 = BeSharp.Linq\\BeSharp.Linq.csproj
+		SccProjectName5 = BeSharp.Linq
+		SccLocalPath5 = BeSharp.Linq
+		SccProjectUniqueName6 = BeSharp.Net\\BeSharp.Net.csproj
+		SccProjectName6 = BeSharp.Net
+		SccLocalPath6 = BeSharp.Net
+		SccProjectUniqueName7 = BeSharp.NumberVerification\\BeSharp.NumberVerification.csproj
+		SccProjectName7 = BeSharp.NumberVerification
+		SccLocalPath7 = BeSharp.NumberVerification
+		SccProjectUniqueName8 = BeSharp.Numerics\\BeSharp.Numerics.csproj
+		SccProjectName8 = BeSharp.Numerics
+		SccLocalPath8 = BeSharp.Numerics
+		SccProjectUniqueName9 = BeSharp.Win32\\BeSharp.Win32.csproj
+		SccProjectName9 = BeSharp.Win32
+		SccLocalPath9 = BeSharp.Win32
+		SccProjectUniqueName10 = BeSharp.Windows.Forms\\BeSharp.Windows.Forms.csproj
+		SccProjectName10 = BeSharp.Windows.Forms
+		SccLocalPath10 = BeSharp.Windows.Forms
+		SccProjectUniqueName11 = BeSharp.Windows.Forms.DataVisualization\\BeSharp.Windows.Forms.DataVisualization.csproj
+		SccProjectName11 = BeSharp.Windows.Forms.DataVisualization
+		SccLocalPath11 = BeSharp.Windows.Forms.DataVisualization
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +80,38 @@ Global
 		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E016BB55-B474-41C8-8EC6-0D0F28CE4F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCAA90E2-CCB9-497D-B619-6C273AB015FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AB8BD4-5BC9-4FEE-A578-2E6A8C5CD0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E7E41D2-C7D2-4AA3-9EBC-BA9D764514A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E7E41D2-C7D2-4AA3-9EBC-BA9D764514A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E7E41D2-C7D2-4AA3-9EBC-BA9D764514A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E7E41D2-C7D2-4AA3-9EBC-BA9D764514A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10404ECA-C127-4887-AE59-A01484DB2A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10404ECA-C127-4887-AE59-A01484DB2A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10404ECA-C127-4887-AE59-A01484DB2A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10404ECA-C127-4887-AE59-A01484DB2A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1753644-73EF-4597-B9CE-CA152374E8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1753644-73EF-4597-B9CE-CA152374E8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1753644-73EF-4597-B9CE-CA152374E8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1753644-73EF-4597-B9CE-CA152374E8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D87068-0025-46E7-A1FE-981225D02054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0527903D-36B4-46D3-A99F-2D3B48D4939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0527903D-36B4-46D3-A99F-2D3B48D4939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0527903D-36B4-46D3-A99F-2D3B48D4939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0527903D-36B4-46D3-A99F-2D3B48D4939F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE86C769-F09E-49C4-A61C-F9D93B262B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE86C769-F09E-49C4-A61C-F9D93B262B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE86C769-F09E-49C4-A61C-F9D93B262B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE86C769-F09E-49C4-A61C-F9D93B262B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
