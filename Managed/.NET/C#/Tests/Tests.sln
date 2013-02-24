@@ -9,24 +9,38 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecimalDoubleSingleTestProj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberVerificationTestProject", "UnitTests\NumberVerificationTests\NumberVerificationTestProject\NumberVerificationTestProject.csproj", "{D6E76CE0-68B0-4649-93F4-700F3BF18E77}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{7531E984-2328-4182-B6B9-B72B4837955F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp.NumberVerification", "..\Library\BeSharp.NumberVerification\BeSharp.NumberVerification.csproj", "{381C79C9-E911-438A-BB98-50C37494756B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeSharp", "..\Library\BeSharp\BeSharp.csproj", "{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
-		SccProjectUniqueName0 = UnitTests\\BeSharpTestProject\\BeSharpTestProject.csproj
-		SccProjectTopLevelParentUniqueName0 = Tests.sln
-		SccProjectName0 = UnitTests/BeSharpTestProject
-		SccLocalPath0 = UnitTests\\BeSharpTestProject
-		SccProjectUniqueName1 = UnitTests\\DecimalDoubleSingleTestProject\\DecimalDoubleSingleTestProject.csproj
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UnitTests\\BeSharpTestProject\\BeSharpTestProject.csproj
 		SccProjectTopLevelParentUniqueName1 = Tests.sln
-		SccProjectName1 = UnitTests/DecimalDoubleSingleTestProject
-		SccLocalPath1 = UnitTests\\DecimalDoubleSingleTestProject
-		SccProjectUniqueName2 = UnitTests\\NumberVerificationTests\\NumberVerificationTestProject\\NumberVerificationTestProject.csproj
+		SccProjectName1 = UnitTests/BeSharpTestProject
+		SccLocalPath1 = UnitTests\\BeSharpTestProject
+		SccProjectUniqueName2 = UnitTests\\DecimalDoubleSingleTestProject\\DecimalDoubleSingleTestProject.csproj
 		SccProjectTopLevelParentUniqueName2 = Tests.sln
-		SccProjectName2 = UnitTests/NumberVerificationTests/NumberVerificationTestProject
-		SccLocalPath2 = UnitTests\\NumberVerificationTests\\NumberVerificationTestProject
-		SccLocalPath3 = .
+		SccProjectName2 = UnitTests/DecimalDoubleSingleTestProject
+		SccLocalPath2 = UnitTests\\DecimalDoubleSingleTestProject
+		SccProjectUniqueName3 = UnitTests\\NumberVerificationTests\\NumberVerificationTestProject\\NumberVerificationTestProject.csproj
+		SccProjectTopLevelParentUniqueName3 = Tests.sln
+		SccProjectName3 = UnitTests/NumberVerificationTests/NumberVerificationTestProject
+		SccLocalPath3 = UnitTests\\NumberVerificationTests\\NumberVerificationTestProject
+		SccProjectUniqueName4 = ..\\Library\\BeSharp.NumberVerification\\BeSharp.NumberVerification.csproj
+		SccProjectTopLevelParentUniqueName4 = Tests.sln
+		SccProjectName4 = ../Library/BeSharp.NumberVerification
+		SccLocalPath4 = ..\\Library\\BeSharp.NumberVerification
+		SccProjectUniqueName5 = ..\\Library\\BeSharp\\BeSharp.csproj
+		SccProjectTopLevelParentUniqueName5 = Tests.sln
+		SccProjectName5 = ../Library/BeSharp
+		SccLocalPath5 = ..\\Library\\BeSharp
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +59,14 @@ Global
 		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E76CE0-68B0-4649-93F4-700F3BF18E77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381C79C9-E911-438A-BB98-50C37494756B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +75,7 @@ Global
 		{B591657B-EADE-49EB-A90D-6B1F00E8E01D} = {F6EFFE3C-8A28-40AE-B204-20248ADB5162}
 		{2427E54B-B563-46B0-8009-9E17E16833A8} = {F6EFFE3C-8A28-40AE-B204-20248ADB5162}
 		{D6E76CE0-68B0-4649-93F4-700F3BF18E77} = {F6EFFE3C-8A28-40AE-B204-20248ADB5162}
+		{381C79C9-E911-438A-BB98-50C37494756B} = {7531E984-2328-4182-B6B9-B72B4837955F}
+		{10932C2A-C57F-4CE0-BFC2-4CBB64C8F987} = {7531E984-2328-4182-B6B9-B72B4837955F}
 	EndGlobalSection
 EndGlobal
