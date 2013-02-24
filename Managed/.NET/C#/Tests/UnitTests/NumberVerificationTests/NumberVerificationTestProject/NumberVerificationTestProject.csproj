@@ -55,7 +55,7 @@
     <Compile Include="BankrekeningNummerVerificationUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Library\BeSharp.NumberVerification\BeSharp.NumberVerification\BeSharp.NumberVerification.csproj">
+    <ProjectReference Include="..\..\..\..\Library\BeSharp.NumberVerification\BeSharp.NumberVerification.csproj">
       <Project>{381C79C9-E911-438A-BB98-50C37494756B}</Project>
       <Name>BeSharp.NumberVerification</Name>
     </ProjectReference>
