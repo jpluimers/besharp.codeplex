@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{49EF4ABD-D54E-4C17-98D1-ADEE7A58FD9C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Tests\ApplicationTests\VCLLoggingTests\VCLLoggingTestsProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BeSharpRTLPackage.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TemporaryCursorDemo">
+        <MSBuild Projects="..\Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj"/>
+    </Target>
+    <Target Name="TemporaryCursorDemo:Clean">
+        <MSBuild Projects="..\Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TemporaryCursorDemo:Make">
+        <MSBuild Projects="..\Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLLoggingTestsProject">
+        <MSBuild Projects="..\Tests\ApplicationTests\VCLLoggingTests\VCLLoggingTestsProject.dproj"/>
+    </Target>
+    <Target Name="VCLLoggingTestsProject:Clean">
+        <MSBuild Projects="..\Tests\ApplicationTests\VCLLoggingTests\VCLLoggingTestsProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLLoggingTestsProject:Make">
+        <MSBuild Projects="..\Tests\ApplicationTests\VCLLoggingTests\VCLLoggingTestsProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BeSharpRTLPackage">
+        <MSBuild Projects="BeSharpRTLPackage.dproj"/>
+    </Target>
+    <Target Name="BeSharpRTLPackage:Clean">
+        <MSBuild Projects="BeSharpRTLPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BeSharpRTLPackage:Make">
+        <MSBuild Projects="BeSharpRTLPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TemporaryCursorDemo;VCLLoggingTestsProject;BeSharpRTLPackage"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TemporaryCursorDemo:Clean;VCLLoggingTestsProject:Clean;BeSharpRTLPackage:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TemporaryCursorDemo:Make;VCLLoggingTestsProject:Make;BeSharpRTLPackage:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

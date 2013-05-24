@@ -1,0 +1,190 @@
+Report to Embarcadero that this piece should be in the XMLDoc portion of the method:
+
+function Supports(const Instance: TObject; const IID: TGUID): Boolean;
+var
+  Temp: IInterface;
+begin
+  // NOTE: Calling this overload on a ref-counted object that has REFCOUNT=0
+  // will result in it being freed upon exit from this routine.
+  Result := Supports(Instance, IID, Temp);
+end;
+
+
+Report to Embarcadero that overload resolution with pointers fails when you have default parameters:
+
+  IDescriptionLogger = interface(IIndentedLogger)
+    ['{6DFE2ADF-27F2-4ABE-824C-EE963D9CB8E4}']
+    procedure Log(const Description: string; const Item: Pointer); overload;
+    procedure Log(const Description: string; const TypeTypeInfo: PTypeInfo; const Prefix: string = ''); overload;
+  end;
+
+It fails when calling it like this:
+
+DescriptionLogger.Log('Pointer', @Self);
+
+It will in fact call the PTypeInfo version.
+
+
+
+Report to Embarcadero that if you perform an Extract Method refactorin on this:
+
+  Format('%g', [1234567.89]);
+
+It will end up like this:
+
+procedure Form1.Test;
+begin
+  Format('%g', [1234568]);
+end;
+
+Same with this: here also the 7, . and 9 are chopped away.
+
+  FloatToStr(1234567.89);
+
+procedure TVCLLoggingTestsForm.Test;
+begin
+  FloatToStr(1234568);
+end;
+
+
+Report to Embarcadero that Extract Method of the body below will skip the const section:
+
+procedure TVCLLoggingTestsForm.RunIndentedLogger;
+const
+  Outer = 0;
+  Inner = 2;
+  MethodName = 'RunInner';
+var
+  CallLevel: Integer;
+begin
+  for CallLevel := Outer to Inner do
+  begin
+    Logger.Enter(Format('%s%d', [MethodName, CallLevel]));
+    RunInner;
+  end;
+  for CallLevel := Inner downto Outer do
+  begin
+    Logger.Leave(Format('%s%d', [MethodName, CallLevel]));
+    Logger.Log(Format('Left %s%d', [MethodName, CallLevel]));
+  end;
+end;
+
+
+
+Report to GExperts team that when using unit scope names inside a project,
+then grep search will fail with a message like this:
+
+---------------------------
+BeSharpRTLPackage - RAD Studio XE3 - TODO.txt [Built]
+---------------------------
+The file C:\Users\developer\VersionControl\BeSharp.codeplex.com\Native\Delphi\Library\RTL\Logging\StringsReporterUnit.pas does not exist.
+---------------------------
+OK
+---------------------------
+
+
+When that bug is solved, re-introduce the "BeSharp." unit scope.
+Don't forget to adjust all the Document Insight documentation!
+
+
+
+
+
+{ Copyright (c) 2007-2012 Jeroen Wiert Pluimers for BeSharp.net and better office benelux.
+Full BSD License is available at http://besharp.codeplex.com/license and http://bo.codeplex.com/license }
+
+// all classes should implement IInterface, and instances should be referenced as interfaces.
+// there should not be any circular dependencies (otherwise the release mechanism will leak)
+
+unit LoggerUnit;
+
+interface
+
+uses
+  SysUtils,
+  Classes,
+  TypInfo,
+  ReporterUnit,
+  ReportProxyUnit,
+  ReportProxyInterfaceUnit,
+  LoggerInterfaceUnit,
+  StringListWrapperUnit;
+
+type
+  TStringArray = array of string;
+
+
+  TNullLogger = class(TLeveledLogger)
+  protected
+    procedure Report(const Line: string); overload; override;
+  end;
+
+procedure GlobalDisableTrace;
+procedure GlobalEnableTrace;
+
+implementation
+
+uses
+  RecordTypeInfoUnit,
+  SetTypeInfoUnit,
+  EnumTypeInfoUnit,
+  StrUtils;
+
+constructor TTeeLogger.Create(const ReportProxyArray: array of IReportProxy);
+var
+  ReportProxies: TReportProxies;
+  Index: Integer;
+begin
+  SetLength(ReportProxies, Length(ReportProxyArray));
+  for Index := Low(ReportProxyArray) to High(ReportProxyArray) do
+    ReportProxies[Index] := ReportProxyArray[Index];
+  Create(ReportProxies);
+end;
+
+constructor TTeeLogger.Create(const ReportProxies: TReportProxies);
+begin
+  inherited Create();
+  FReportProxies := ReportProxies;
+end;
+
+function TTeeLogger.BuildReportProxies(const ReportProxyArray: array of IReportProxy): TReportProxies;
+var
+  Index: Integer;
+begin
+  SetLength(Result, Length(ReportProxyArray));
+  for Index := Low(ReportProxyArray) to High(ReportProxyArray) do
+    Result[Index] := ReportProxyArray[Index];
+end;
+
+procedure TTeeLogger.Report(const Line: string);
+var
+  ReportProxy: IReportProxy;
+begin
+  if not GlobalLogEnabled then exit;
+  inherited Report(Line);
+  for ReportProxy in ReportProxies do
+    Report(ReportProxy, Line);
+end;
+
+procedure TTeeLogger.Report(const ReportProxy: IReportProxy; const Line: string);
+begin
+  ReportProxy.Report(Line);
+end;
+
+procedure TTeeLogger.SetEnabled(const Value: Boolean);
+var
+  ReportProxy: IReportProxy;
+  EnabledLogger: IEnabledLogger;
+begin
+  inherited SetEnabled(Value);
+  for ReportProxy in ReportProxies do
+    if Supports(ReportProxy, IEnabledLogger, EnabledLogger) then
+      EnabledLogger.Enabled := Value;
+end;
+
+procedure TNullLogger.Report(const Line: string);
+begin
+  // NOP: null logger doesn't report
+end;
+
+end.
