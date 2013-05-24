@@ -1,0 +1,68 @@
+package BeSharpRTLPackage;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  LoggerInterfaceUnit in 'RTL\Logging\LoggerInterfaceUnit.pas',
+  ReportProxyInterfaceUnit in 'RTL\Logging\ReportProxyInterfaceUnit.pas',
+  ReportPayloadInterfaceUnit in 'RTL\Logging\ReportPayloadInterfaceUnit.pas',
+  ReportProxyUnit in 'RTL\Logging\LoggingImplementation\ReportProxyUnit.pas',
+  ReporterInterfaceUnit in 'RTL\Logging\ReporterInterfaceUnit.pas',
+  ReportEventUnit in 'RTL\Logging\ReportEventUnit.pas',
+  AbstractReporterUnit in 'RTL\Logging\LoggingImplementation\AbstractReporterUnit.pas',
+  ConsoleReporterUnit in 'RTL\Logging\LoggingImplementation\ConsoleReporterUnit.pas',
+  SimpleAbstractReporterUnit in 'RTL\Logging\LoggingImplementation\SimpleAbstractReporterUnit.pas',
+  EnabledLoggerUnit in 'RTL\Logging\LoggingImplementation\EnabledLoggerUnit.pas',
+  GlobalLoggerSettingsUnit in 'RTL\Logging\LoggingImplementation\GlobalLoggerSettingsUnit.pas',
+  IndentedLoggerUnit in 'RTL\Logging\LoggingImplementation\IndentedLoggerUnit.pas',
+  StringListWrapperInterfaceUnit in 'RTL\StringListWrapperInterfaceUnit.pas',
+  StringListWrapperUnit in 'RTL\RTLImplementation\StringListWrapperUnit.pas',
+  StringReportPayloadUnit in 'RTL\Logging\LoggingImplementation\StringReportPayloadUnit.pas',
+  BaseReportPayloadUnit in 'RTL\Logging\LoggingImplementation\BaseReportPayloadUnit.pas',
+  IndentedPayloadReportPayloadUnit in 'RTL\Logging\LoggingImplementation\IndentedPayloadReportPayloadUnit.pas',
+  TimeStampedReportPayloadWrapperUnit in 'RTL\Logging\LoggingImplementation\TimeStampedReportPayloadWrapperUnit.pas',
+  BaseReportPayloadWrapperUnit in 'RTL\Logging\LoggingImplementation\BaseReportPayloadWrapperUnit.pas',
+  StringsReporterUnit in 'RTL\Logging\LoggingImplementation\StringsReporterUnit.pas',
+  DescriptionLoggerUnit in 'RTL\Logging\LoggingImplementation\DescriptionLoggerUnit.pas',
+  BaseLoggerUnit in 'RTL\Logging\LoggingImplementation\BaseLoggerUnit.pas',
+  EnumerationTypeInformationUnit in 'RTL\TypeInformation\EnumerationTypeInformationUnit.pas',
+  RecordTypeInformationUnit in 'RTL\TypeInformation\RecordTypeInformationUnit.pas',
+  SetTypeInformationUnit in 'RTL\TypeInformation\SetTypeInformationUnit.pas',
+  IndexLoggerUnit in 'RTL\Logging\LoggingImplementation\IndexLoggerUnit.pas',
+  LoggerUnit in 'RTL\Logging\LoggingImplementation\LoggerUnit.pas',
+  SafeFormatUnit in 'RTL\RTLImplementation\SafeFormatUnit.pas',
+  LeveledLoggerUnit in 'RTL\Logging\LoggingImplementation\LeveledLoggerUnit.pas',
+  FormatLineReportPayloadWrapperUnit in 'RTL\Logging\LoggingImplementation\FormatLineReportPayloadWrapperUnit.pas',
+  TemporaryCursorUnit in 'VCL\TemporaryCursorUnit.pas',
+  MementoUnit in 'RTL\MementoUnit.pas',
+  AnonymousMethodMementoUnit in 'RTL\AnonymousMethodMementoUnit.pas';
+
+end.
