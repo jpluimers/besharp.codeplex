@@ -1,0 +1,3 @@
+Report No: 116429          Status: Reported
+Dialog "Select Project Group or Project to Open" should be resizable or the internal ProjectGroup / Project lists scrollable
+http://qc.embarcadero.com/wc/qcmain.aspx?d=116429
