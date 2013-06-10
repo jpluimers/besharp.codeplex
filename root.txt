@@ -1,1 +1,3 @@
 root of the bsharp project in tfs.codeplex.com\TFS02
+
+https://besharp.svn.codeplex.com/svn

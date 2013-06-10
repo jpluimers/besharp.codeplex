@@ -9,10 +9,10 @@
         <Projects Include="Apps\SplitListOfIntegersIntoSublists\SplitListOfIntegersIntoSublists.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
+        <Projects Include="Apps\RegEx\RegExCRLF\RegExCRLF.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Apps\RegEx\RegExCRLF\RegExCRLF.dproj">
+        <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -41,15 +41,6 @@
     <Target Name="SplitListOfIntegersIntoSublists:Make">
         <MSBuild Projects="Apps\SplitListOfIntegersIntoSublists\SplitListOfIntegersIntoSublists.dproj" Targets="Make"/>
     </Target>
-    <Target Name="TypeIdentity">
-        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj"/>
-    </Target>
-    <Target Name="TypeIdentity:Clean">
-        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TypeIdentity:Make">
-        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
-    </Target>
     <Target Name="RegExCRLF">
         <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj"/>
     </Target>
@@ -59,14 +50,23 @@
     <Target Name="RegExCRLF:Make">
         <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TypeIdentity">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj"/>
+    </Target>
+    <Target Name="TypeIdentity:Clean">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TypeIdentity:Make">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;TypeIdentity;RegExCRLF"/>
+        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;RegExCRLF;TypeIdentity"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;TypeIdentity:Clean;RegExCRLF:Clean"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;RegExCRLF:Clean;TypeIdentity:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;TypeIdentity:Make;RegExCRLF:Make"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;RegExCRLF:Make;TypeIdentity:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

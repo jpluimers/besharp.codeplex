@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{7F2274B7-AB82-440D-B532-AA87C06AB26F}</ProjectGuid>
-        <ProjectVersion>14.3</ProjectVersion>
+        <ProjectVersion>14.6</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <MainSource>TypeIdentity.dpr</MainSource>
         <Base>True</Base>
