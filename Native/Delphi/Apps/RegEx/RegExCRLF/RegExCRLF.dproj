@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{DB5148A2-8CEA-44CA-9806-4524831B7C22}</ProjectGuid>
-        <ProjectVersion>14.3</ProjectVersion>
+        <ProjectVersion>14.6</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <MainSource>RegExCRLF.dpr</MainSource>
         <Base>True</Base>
