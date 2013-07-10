@@ -1,0 +1,218 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{53A8103C-DA67-45E5-8236-71FC34EFAD6B}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>None</FrameworkType>
+			<MainSource>Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform Condition="'$(Platform)'==''">OSX32</Platform>
+			<TargetedPlatforms>7</TargetedPlatforms>
+			<AppType>Console</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+			<Base_Win64>true</Base_Win64>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+			<Base_OSX32>true</Base_OSX32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+			<DCC_UsePackage>fmx;IndySystem;DBXInterBaseDriver;DataSnapCommon;DataSnapClient;DataSnapServer;DataSnapProviderClient;DbxCommonDriver;dbxcds;DBXOracleDriver;CustomIPTransport;dsnap;IndyCore;fmxase;inetdbxpress;IPIndyImpl;bindcompfmx;rtl;dbrtl;DbxClientDriver;bindcomp;inetdb;xmlrtl;ibxpress;IndyProtocols;DBXMySQLDriver;bindengine;soaprtl;DBXInformixDriver;DBXFirebirdDriver;inet;fmxobj;DBXSybaseASADriver;fmxdae;dbexpress;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+			<DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+			<DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win64)'!=''">
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_UsePackage>dxdborRS16;dxPScxVGridLnkRS16;cxLibraryRS16;dxLayoutControlRS16;dxPScxPivotGridLnkRS16;dxCoreRS16;cxExportRS16;dxBarRS16;cxSpreadSheetRS16;cxTreeListdxBarPopupMenuRS16;TeeDB;dxPsPrVwAdvRS16;vclib;dxPSCoreRS16;cxPivotGridOLAPRS16;dxPScxTLLnkRS16;cxPageControlRS16;dxRibbonRS16;DBXSybaseASEDriver;dxPScxGridLnkRS16;vclimg;cxTreeListRS16;dxComnRS16;vcldb;vcldsnap;dxBarExtDBItemsRS16;DBXDb2Driver;vcl;DBXMSSQLDriver;cxDataRS16;cxBarEditItemRS16;dxDockingRS16;dxPSDBTeeChartRS16;cxPageControldxBarPopupMenuRS16;cxSchedulerGridRS16;webdsnap;dxBarExtItemsRS16;dxPSLnksRS16;dxtrmdRS16;lmdrtrtlx;dxPSTeeChartRS16;adortl;dxPSdxLCLnkRS16;cxVerticalGridRS16;lmdrtcore;dxorgcRS16;dxPScxExtCommonRS16;dxNavBarRS16;dxPSdxDBOCLnkRS16;Tee;DBXOdbcDriver;dxdbtrRS16;dxPScxSSLnkRS16;dxPScxCommonRS16;dxmdsRS16;dxSpellCheckerRS16;cxGridRS16;dxPSPrVwRibbonRS16;TeeUI;vclactnband;cxEditorsRS16;bindcompvcl;cxPivotGridRS16;dxPScxSchedulerLnkRS16;dxPSdxDBTVLnkRS16;vclie;cxPivotGridChartRS16;cxSchedulerRS16;vcltouch;websnap;VclSmp;dxTabbedMDIRS16;DataSnapConnectors;lmdrtplugin;dxPSdxOCLnkRS16;dsnapcon;dxPSdxFCLnkRS16;dxThemeRS16;dxPScxPCProdRS16;vclx;dxFlowChartRS16;lmdrtl;dxGDIPlusRS16;dxBarDBNavRS16;$(DCC_UsePackage)</DCC_UsePackage>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_OSX32)'!=''">
+			<VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName)</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_UsePackage>dxdborRS16;dxPScxVGridLnkRS16;cxLibraryRS16;dxLayoutControlRS16;dxPScxPivotGridLnkRS16;dxCoreRS16;cxExportRS16;dxBarRS16;cxSpreadSheetRS16;cxTreeListdxBarPopupMenuRS16;TeeDB;dxPsPrVwAdvRS16;Rave100VCL;vclib;inetdbbde;dxPSCoreRS16;cxPivotGridOLAPRS16;dxPScxTLLnkRS16;cxPageControlRS16;dxRibbonRS16;DBXSybaseASEDriver;dxPScxGridLnkRS16;RemObjects_WebBroker_D16;vclimg;RemObjects_Indy_D16;fmi;cxTreeListRS16;dxComnRS16;vcldb;vcldsnap;dxBarExtDBItemsRS16;DBXDb2Driver;Intraweb_120_160;vclribbon;frxe16;vcl;CloudService;DBXMSSQLDriver;CodeSiteExpressPkg;FmxTeeUI;cxDataRS16;cxBarEditItemRS16;dxDockingRS16;dxPSDBTeeChartRS16;cxPageControldxBarPopupMenuRS16;cxSchedulerGridRS16;webdsnap;dxBarExtItemsRS16;dxPSLnksRS16;dxtrmdRS16;lmdrtrtlx;dxPSTeeChartRS16;adortl;dxPSdxLCLnkRS16;cxVerticalGridRS16;lmdrtcore;dxorgcRS16;dxPScxExtCommonRS16;vcldbx;dxNavBarRS16;frx16;dxPSdxDBOCLnkRS16;boComponentLibraryRunTimePackage;Tee;DBXOdbcDriver;dxdbtrRS16;svnui;dxPScxSSLnkRS16;dxPScxCommonRS16;dxmdsRS16;dxSpellCheckerRS16;frxDB16;intrawebdb_120_160;cxGridRS16;dxPSPrVwRibbonRS16;fs16;TeeUI;vclactnband;FMXTee;cxEditorsRS16;bindcompvcl;cxPivotGridRS16;dxPScxSchedulerLnkRS16;dxPSdxDBTVLnkRS16;vclie;cxPivotGridChartRS16;cxSchedulerRS16;vcltouch;websnap;VclSmp;fsDB16;dxTabbedMDIRS16;DataSnapConnectors;lmdrtplugin;dxPSdxOCLnkRS16;dsnapcon;dxPSdxFCLnkRS16;dxThemeRS16;dxPScxPCProdRS16;vclx;svn;dxFlowChartRS16;bdertl;RemObjects_Synapse_D16;lmdrtl;dxGDIPlusRS16;dxBarDBNavRS16;$(DCC_UsePackage)</DCC_UsePackage>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<Manifest_File>None</Manifest_File>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<PreBuildEvent><![CDATA[>> %temp%\prebuild.txt echo BDS: $(BDS)
+>> %temp%\prebuild.txt echo Config: $(Config)
+>> %temp%\prebuild.txt echo DEFINES: $(DEFINES)
+>> %temp%\prebuild.txt echo DIR: $(DIR)
+>> %temp%\prebuild.txt echo INCLUDEPATH: $(INCLUDEPATH)
+>> %temp%\prebuild.txt echo INPUTDIR: $(INPUTDIR)
+>> %temp%\prebuild.txt echo INPUTEXT: $(INPUTEXT)
+>> %temp%\prebuild.txt echo INPUTFILENAME: $(INPUTFILENAME)
+>> %temp%\prebuild.txt echo INPUTNAME: $(INPUTNAME)
+>> %temp%\prebuild.txt echo INPUTPATH: $(INPUTPATH)
+>> %temp%\prebuild.txt echo LOCALCOMMAND: $(LOCALCOMMAND)
+>> %temp%\prebuild.txt echo OUTPUTDIR: $(OUTPUTDIR)
+>> %temp%\prebuild.txt echo OUTPUTEXT: $(OUTPUTEXT)
+>> %temp%\prebuild.txt echo OUTPUTFILENAME: $(OUTPUTFILENAME)
+>> %temp%\prebuild.txt echo OUTPUTNAME: $(OUTPUTNAME)
+>> %temp%\prebuild.txt echo OUTPUTPATH: $(OUTPUTPATH)
+>> %temp%\prebuild.txt echo Path: $(Path)
+>> %temp%\prebuild.txt echo Platform: $(Platform)
+>> %temp%\prebuild.txt echo PROJECTDIR: $(PROJECTDIR)
+>> %temp%\prebuild.txt echo PROJECTEXT: $(PROJECTEXT)
+>> %temp%\prebuild.txt echo PROJECTFILENAME: $(PROJECTFILENAME)
+>> %temp%\prebuild.txt echo PROJECTNAME: $(PROJECTNAME)
+>> %temp%\prebuild.txt echo PROJECTPATH: $(PROJECTPATH)
+>> %temp%\prebuild.txt echo SAVE: $(SAVE)
+>> %temp%\prebuild.txt echo SystemRoot: $(SystemRoot)
+>> %temp%\prebuild.txt echo WINDIR: $(WINDIR)
+if !$(Platform)!==!Win32! copy "$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode.dll" "$(OUTPUTDIR)"
+if !$(Platform)!==!Win64! copy "$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode64.dll" "$(OUTPUTDIR)"
+$(PreBuildEvent)]]></PreBuildEvent>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+			<DCC_Define>DEBUG;FullDebugMode;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<DCC_RemoteDebug>true</DCC_RemoteDebug>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<DCC_RemoteDebug>false</DCC_RemoteDebug>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="$(MainSource)">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="..\..\..\..\..\fastmm.sourceforge.net\FastMM4.pas"/>
+			<DCCReference Include="..\..\..\..\..\fastmm.sourceforge.net\FastMM4Messages.pas"/>
+			<None Include="Win32\Debug\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent_MemoryManager_EventLog.txt"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\boComponentLibraryDesignTimePackage.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NnlibD16R.bpl">File C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NnlibD16R.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400R.bpl">File C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400R.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400MQR.bpl">File C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400MQR.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400D.bpl">File C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400D.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400MQD.bpl">File C:\Users\developer\Dropbox\Shared-WebSphereMQ\CAS400MQ-sources\CAS400WMQ7XE2-Sources\bin\NC4AS400MQD.bpl not found</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+					<Source>
+						<Source Name="MainSource">Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dpr</Source>
+					</Source>
+				</Delphi.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="Win64">True</Platform>
+					<Platform value="OSX32">True</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+		<PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win64'">
+			<PreBuildEvent>&gt;&gt; %temp%\prebuild.txt echo BDS: $(BDS)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Config: $(Config)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo DEFINES: $(DEFINES)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo DIR: $(DIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INCLUDEPATH: $(INCLUDEPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTDIR: $(INPUTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTEXT: $(INPUTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTFILENAME: $(INPUTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTNAME: $(INPUTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTPATH: $(INPUTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo LOCALCOMMAND: $(LOCALCOMMAND)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTDIR: $(OUTPUTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTEXT: $(OUTPUTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTFILENAME: $(OUTPUTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTNAME: $(OUTPUTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTPATH: $(OUTPUTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Path: $(Path)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Platform: $(Platform)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTDIR: $(PROJECTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTEXT: $(PROJECTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTFILENAME: $(PROJECTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTNAME: $(PROJECTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTPATH: $(PROJECTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo SAVE: $(SAVE)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo SystemRoot: $(SystemRoot)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo WINDIR: $(WINDIR)&amp;&amp;if !$(Platform)!==!Win32! copy &quot;$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode.dll&quot; &quot;$(OUTPUTDIR)&quot;&amp;&amp;if !$(Platform)!==!Win64! copy &quot;$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode64.dll&quot; &quot;$(OUTPUTDIR)&quot;</PreBuildEvent>
+			<PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+			<PreLinkEvent/>
+			<PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+			<PostBuildEvent/>
+			<PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='OSX32'">
+			<PreBuildEvent>&gt;&gt; %temp%\prebuild.txt echo BDS: $(BDS)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Config: $(Config)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo DEFINES: $(DEFINES)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo DIR: $(DIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INCLUDEPATH: $(INCLUDEPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTDIR: $(INPUTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTEXT: $(INPUTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTFILENAME: $(INPUTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTNAME: $(INPUTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTPATH: $(INPUTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo LOCALCOMMAND: $(LOCALCOMMAND)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTDIR: $(OUTPUTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTEXT: $(OUTPUTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTFILENAME: $(OUTPUTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTNAME: $(OUTPUTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTPATH: $(OUTPUTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Path: $(Path)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Platform: $(Platform)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTDIR: $(PROJECTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTEXT: $(PROJECTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTFILENAME: $(PROJECTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTNAME: $(PROJECTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTPATH: $(PROJECTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo SAVE: $(SAVE)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo SystemRoot: $(SystemRoot)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo WINDIR: $(WINDIR)&amp;&amp;if !$(Platform)!==!Win32! copy &quot;$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode.dll&quot; &quot;$(OUTPUTDIR)&quot;&amp;&amp;if !$(Platform)!==!Win64! copy &quot;$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode64.dll&quot; &quot;$(OUTPUTDIR)&quot;</PreBuildEvent>
+			<PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+			<PreLinkEvent/>
+			<PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+			<PostBuildEvent/>
+			<PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+			<PreBuildEvent>&gt;&gt; %temp%\prebuild.txt echo BDS: $(BDS)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Config: $(Config)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo DEFINES: $(DEFINES)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo DIR: $(DIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INCLUDEPATH: $(INCLUDEPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTDIR: $(INPUTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTEXT: $(INPUTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTFILENAME: $(INPUTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTNAME: $(INPUTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo INPUTPATH: $(INPUTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo LOCALCOMMAND: $(LOCALCOMMAND)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTDIR: $(OUTPUTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTEXT: $(OUTPUTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTFILENAME: $(OUTPUTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTNAME: $(OUTPUTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo OUTPUTPATH: $(OUTPUTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Path: $(Path)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo Platform: $(Platform)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTDIR: $(PROJECTDIR)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTEXT: $(PROJECTEXT)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTFILENAME: $(PROJECTFILENAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTNAME: $(PROJECTNAME)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo PROJECTPATH: $(PROJECTPATH)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo SAVE: $(SAVE)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo SystemRoot: $(SystemRoot)&amp;&amp;&gt;&gt; %temp%\prebuild.txt echo WINDIR: $(WINDIR)&amp;&amp;if !$(Platform)!==!Win32! copy &quot;$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode.dll&quot; &quot;$(OUTPUTDIR)&quot;&amp;&amp;if !$(Platform)!==!Win64! copy &quot;$(INPUTDIR)..\..\..\..\..\fastmm.sourceforge.net\FullDebugMode DLL\Precompiled\FastMM_FullDebugMode64.dll&quot; &quot;$(OUTPUTDIR)&quot;</PreBuildEvent>
+			<PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+			<PreLinkEvent/>
+			<PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+			<PostBuildEvent/>
+			<PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+		</PropertyGroup>
+	</Project>
