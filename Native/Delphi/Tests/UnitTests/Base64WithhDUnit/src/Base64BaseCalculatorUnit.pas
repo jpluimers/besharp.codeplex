@@ -22,8 +22,10 @@ type
 
   TBase64Calculator = class(TBase64BaseCalculator)
   public
-    procedure CalculateString(const Buffer:string; var Base64: string); overload; override;
-    procedure InverseCalculateString(const Buffer:string; var Base64: string); overload; override;
+    procedure CalculateString(const Buffer:string; var Base64: string); overload;
+        override;
+    procedure InverseCalculateString(const Buffer:string; var Base64: string);
+        overload; override;
   end;
 
   //1 Utility class to write out a bunch of files with various encodings of the Buffer
@@ -50,7 +52,6 @@ implementation
 uses
   SysUtils,
   Base64,
-  MessageDigest_5,
   Variants,
   Types,
   IdHashMessageDigest;
@@ -80,12 +81,14 @@ begin
   Base64 := NullAsStringValue;
 end;
 
-procedure TBase64Calculator.CalculateString(const Buffer:string; var Base64: string);
+procedure TBase64Calculator.CalculateString(const Buffer:string; var Base64:
+    string);
 begin
   Base64 := string(Base64Encode(Buffer));
 end;
 
-procedure TBase64Calculator.InverseCalculateString(const Buffer:string; var Base64: string);
+procedure TBase64Calculator.InverseCalculateString(const Buffer:string; var
+    Base64: string);
 begin
   Base64 := string(Base64Decode(Buffer));
 end;

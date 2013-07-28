@@ -2,15 +2,15 @@ unit Base64;
 
 interface
 
-function Base64Decode(const Text: AnsiString): AnsiString;
-function Base64Encode(const Text: AnsiString): AnsiString;
+function Base64Decode(const Text: string): string;
+function Base64Encode(const Text: string): string;
 
 implementation
 
 uses
   IdCoderMIME;
 
-function Base64Decode(const Text: AnsiString): AnsiString;
+function Base64Decode(const Text: string): string;
 var
   Decoder : TIdDecoderMime;
 begin
@@ -22,7 +22,7 @@ begin
   end;
 end;
 
-function Base64Encode(const Text: AnsiString): AnsiString;
+function Base64Encode(const Text: string): string;
 var
   Encoder : TIdEncoderMime;
 begin
