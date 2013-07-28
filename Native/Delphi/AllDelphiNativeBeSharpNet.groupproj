@@ -12,7 +12,16 @@
         <Projects Include="Apps\RegEx\RegExCRLF\RegExCRLF.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\HintingDirectives\HintingDirectivesConsoleProject.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -50,6 +59,15 @@
     <Target Name="RegExCRLF:Make">
         <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Base64DUnitGUIProject">
+        <MSBuild Projects="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj"/>
+    </Target>
+    <Target Name="Base64DUnitGUIProject:Clean">
+        <MSBuild Projects="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Base64DUnitGUIProject:Make">
+        <MSBuild Projects="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj" Targets="Make"/>
+    </Target>
     <Target Name="TypeIdentity">
         <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj"/>
     </Target>
@@ -59,14 +77,32 @@
     <Target Name="TypeIdentity:Make">
         <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Copy_FastMM_FullDebugMode_Dll_PostBuildEvent">
+        <MSBuild Projects="Apps\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dproj"/>
+    </Target>
+    <Target Name="Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Clean">
+        <MSBuild Projects="Apps\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Make">
+        <MSBuild Projects="Apps\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HintingDirectivesConsoleProject">
+        <MSBuild Projects="Apps\HintingDirectives\HintingDirectivesConsoleProject.dproj"/>
+    </Target>
+    <Target Name="HintingDirectivesConsoleProject:Clean">
+        <MSBuild Projects="Apps\HintingDirectives\HintingDirectivesConsoleProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HintingDirectivesConsoleProject:Make">
+        <MSBuild Projects="Apps\HintingDirectives\HintingDirectivesConsoleProject.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;RegExCRLF;TypeIdentity"/>
+        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;RegExCRLF;Base64DUnitGUIProject;TypeIdentity;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent;HintingDirectivesConsoleProject"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;RegExCRLF:Clean;TypeIdentity:Clean"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;RegExCRLF:Clean;Base64DUnitGUIProject:Clean;TypeIdentity:Clean;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Clean;HintingDirectivesConsoleProject:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;RegExCRLF:Make;TypeIdentity:Make"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;RegExCRLF:Make;Base64DUnitGUIProject:Make;TypeIdentity:Make;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Make;HintingDirectivesConsoleProject:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
