@@ -49,7 +49,7 @@ type
     function FuncLibrary: Integer; virtual; library; abstract;
     function FuncPlatform: Integer; virtual; platform; abstract;
     procedure Proc; virtual; abstract;
-    procedure ProcDeprecated virtual; deprecated; abstract;
+    procedure ProcDeprecated; virtual; deprecated; abstract;
     procedure ProcExperimental; virtual; experimental; abstract;
     procedure ProcLibrary; virtual; library; abstract;
     procedure ProcPlatform; virtual; platform; abstract;
