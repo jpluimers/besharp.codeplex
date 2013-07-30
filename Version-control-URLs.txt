@@ -1,0 +1,49 @@
+This the list of version control URLs of our repository and the repositories we depend on.
+
+Each first line is the name of the directory we use.
+
+..\BeSharp.codeplex.com
+https://besharp.svn.codeplex.com/svn
+
+..\bo.codeplex.com
+https://bo.svn.codeplex.com/svn
+
+..\dnpextensions.codeplex.com
+https://dnpextensions.svn.codeplex.com/svn
+
+..\extensionmethod.codeplex.com
+https://extensionmethod.svn.codeplex.com/svn
+
+..\radstudiodemos.sourceforge.net
+https://radstudiodemos.svn.sourceforge.net/svnroot/radstudiodemos
+
+..\radstudioverins.sourceforge.net
+https://radstudioverins.svn.sourceforge.net/svnroot/radstudioverins
+
+..\fastmm.sourceforge.net
+https://fastmm.svn.sourceforge.net/svnroot/fastmm 
+
+../Delphi-Mocks
+https://github.com/VSoftTechnologies/Delphi-Mocks.git
+
+../superobject.googlecode.com
+http://superobject.googlecode.com/svn/trunk/
+web: http://code.google.com/p/superobject/source/checkout
+
+../delphi-orm.googlecode.com
+http://delphi-orm.googlecode.com/svn/trunk/
+
+../delphi-coll.googlecode.com
+http://delphi-coll.googlecode.com/svn/trunk/
+
+../jcl.sourceforge.net
+https://jcl.svn.sourceforge.net/svnroot/jcl/trunk/
+
+../jvcl.sourceforge.net
+https://jvcl.svn.sourceforge.net/svnroot/jvcl/trunk/
+
+Note that we try to make our Trunk always compile.
+Drop us a line when it doesn't.
+
+We're working to get a Continuous Integration system setup to make sure it always builds, tests, etc.
+
