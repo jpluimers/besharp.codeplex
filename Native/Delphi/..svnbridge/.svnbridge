@@ -8,4 +8,6 @@ __history
 *.exe
 *.dll
 bin/*
+bin\*
+*.rsm
 </Value></Property></Properties></ItemProperties>
