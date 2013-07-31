@@ -12,16 +12,37 @@
         <Projects Include="Apps\RegEx\RegExCRLF\RegExCRLF.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\FMX\UnicodeChessPieces\UnicodeChessPiecesProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tests\UnitTests\MD5WithhDUnit\prj\MD5DUnitGUIProject.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
+        <Projects Include="Tests\UnitTests\HResultTests\HResultTests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tests\UnitTests\SysUtilsFormatTests\SysUtilsFormatTests.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Apps\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Apps\HintingDirectives\HintingDirectivesConsoleProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\i18n\LoadStringResource\LoadStringResourceProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\TypeIdentity\TypeIdentity.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Apps\Message_Directive\Message_Directive.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -59,6 +80,33 @@
     <Target Name="RegExCRLF:Make">
         <MSBuild Projects="Apps\RegEx\RegExCRLF\RegExCRLF.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TemporaryCursorDemo">
+        <MSBuild Projects="Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj"/>
+    </Target>
+    <Target Name="TemporaryCursorDemo:Clean">
+        <MSBuild Projects="Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TemporaryCursorDemo:Make">
+        <MSBuild Projects="Apps\VCL\TemporaryCursorDemo\TemporaryCursorDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UnicodeChessPiecesProject">
+        <MSBuild Projects="Apps\FMX\UnicodeChessPieces\UnicodeChessPiecesProject.dproj"/>
+    </Target>
+    <Target Name="UnicodeChessPiecesProject:Clean">
+        <MSBuild Projects="Apps\FMX\UnicodeChessPieces\UnicodeChessPiecesProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UnicodeChessPiecesProject:Make">
+        <MSBuild Projects="Apps\FMX\UnicodeChessPieces\UnicodeChessPiecesProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MD5DUnitGUIProject">
+        <MSBuild Projects="Tests\UnitTests\MD5WithhDUnit\prj\MD5DUnitGUIProject.dproj"/>
+    </Target>
+    <Target Name="MD5DUnitGUIProject:Clean">
+        <MSBuild Projects="Tests\UnitTests\MD5WithhDUnit\prj\MD5DUnitGUIProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MD5DUnitGUIProject:Make">
+        <MSBuild Projects="Tests\UnitTests\MD5WithhDUnit\prj\MD5DUnitGUIProject.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Base64DUnitGUIProject">
         <MSBuild Projects="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj"/>
     </Target>
@@ -68,14 +116,23 @@
     <Target Name="Base64DUnitGUIProject:Make">
         <MSBuild Projects="Tests\UnitTests\Base64WithhDUnit\prj\Base64DUnitGUIProject.dproj" Targets="Make"/>
     </Target>
-    <Target Name="TypeIdentity">
-        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj"/>
+    <Target Name="HResultTests">
+        <MSBuild Projects="Tests\UnitTests\HResultTests\HResultTests.dproj"/>
     </Target>
-    <Target Name="TypeIdentity:Clean">
-        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Clean"/>
+    <Target Name="HResultTests:Clean">
+        <MSBuild Projects="Tests\UnitTests\HResultTests\HResultTests.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="TypeIdentity:Make">
-        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
+    <Target Name="HResultTests:Make">
+        <MSBuild Projects="Tests\UnitTests\HResultTests\HResultTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SysUtilsFormatTests">
+        <MSBuild Projects="Tests\UnitTests\SysUtilsFormatTests\SysUtilsFormatTests.dproj"/>
+    </Target>
+    <Target Name="SysUtilsFormatTests:Clean">
+        <MSBuild Projects="Tests\UnitTests\SysUtilsFormatTests\SysUtilsFormatTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SysUtilsFormatTests:Make">
+        <MSBuild Projects="Tests\UnitTests\SysUtilsFormatTests\SysUtilsFormatTests.dproj" Targets="Make"/>
     </Target>
     <Target Name="Copy_FastMM_FullDebugMode_Dll_PostBuildEvent">
         <MSBuild Projects="Apps\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent\Copy_FastMM_FullDebugMode_Dll_PostBuildEvent.dproj"/>
@@ -95,14 +152,41 @@
     <Target Name="HintingDirectivesConsoleProject:Make">
         <MSBuild Projects="Apps\HintingDirectives\HintingDirectivesConsoleProject.dproj" Targets="Make"/>
     </Target>
+    <Target Name="LoadStringResourceProject">
+        <MSBuild Projects="Apps\i18n\LoadStringResource\LoadStringResourceProject.dproj"/>
+    </Target>
+    <Target Name="LoadStringResourceProject:Clean">
+        <MSBuild Projects="Apps\i18n\LoadStringResource\LoadStringResourceProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LoadStringResourceProject:Make">
+        <MSBuild Projects="Apps\i18n\LoadStringResource\LoadStringResourceProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TypeIdentity">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj"/>
+    </Target>
+    <Target Name="TypeIdentity:Clean">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TypeIdentity:Make">
+        <MSBuild Projects="Apps\TypeIdentity\TypeIdentity.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Message_Directive">
+        <MSBuild Projects="Apps\Message_Directive\Message_Directive.dproj"/>
+    </Target>
+    <Target Name="Message_Directive:Clean">
+        <MSBuild Projects="Apps\Message_Directive\Message_Directive.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Message_Directive:Make">
+        <MSBuild Projects="Apps\Message_Directive\Message_Directive.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;RegExCRLF;Base64DUnitGUIProject;TypeIdentity;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent;HintingDirectivesConsoleProject"/>
+        <CallTarget Targets="D2006XE2MigrationExamples;SplitListOfIntegersIntoSublists;RegExCRLF;TemporaryCursorDemo;UnicodeChessPiecesProject;MD5DUnitGUIProject;Base64DUnitGUIProject;HResultTests;SysUtilsFormatTests;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent;HintingDirectivesConsoleProject;LoadStringResourceProject;TypeIdentity;Message_Directive"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;RegExCRLF:Clean;Base64DUnitGUIProject:Clean;TypeIdentity:Clean;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Clean;HintingDirectivesConsoleProject:Clean"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Clean;SplitListOfIntegersIntoSublists:Clean;RegExCRLF:Clean;TemporaryCursorDemo:Clean;UnicodeChessPiecesProject:Clean;MD5DUnitGUIProject:Clean;Base64DUnitGUIProject:Clean;HResultTests:Clean;SysUtilsFormatTests:Clean;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Clean;HintingDirectivesConsoleProject:Clean;LoadStringResourceProject:Clean;TypeIdentity:Clean;Message_Directive:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;RegExCRLF:Make;Base64DUnitGUIProject:Make;TypeIdentity:Make;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Make;HintingDirectivesConsoleProject:Make"/>
+        <CallTarget Targets="D2006XE2MigrationExamples:Make;SplitListOfIntegersIntoSublists:Make;RegExCRLF:Make;TemporaryCursorDemo:Make;UnicodeChessPiecesProject:Make;MD5DUnitGUIProject:Make;Base64DUnitGUIProject:Make;HResultTests:Make;SysUtilsFormatTests:Make;Copy_FastMM_FullDebugMode_Dll_PostBuildEvent:Make;HintingDirectivesConsoleProject:Make;LoadStringResourceProject:Make;TypeIdentity:Make;Message_Directive:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
