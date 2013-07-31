@@ -23,7 +23,7 @@ var
 implementation
 
 uses
-  BeSharp.i18n.StringResourcesUnit;
+  StringResourcesUnit;
 
 {$R *.dfm}
 
