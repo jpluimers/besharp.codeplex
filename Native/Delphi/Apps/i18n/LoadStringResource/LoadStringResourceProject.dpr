@@ -3,7 +3,7 @@ program LoadStringResourceProject;
 uses
   Vcl.Forms,
   LoadStringResourceMainFormUnit in 'LoadStringResourceMainFormUnit.pas' {LoadStringResourceMainForm},
-  BeSharp.i18n.StringResourcesUnit in '..\..\..\..\BeSharp.i18n\BeSharp.i18n.StringResourcesUnit.pas';
+  StringResourcesUnit in '..\..\..\Library\RTL\WIN\i18n\StringResourcesUnit.pas';
 
 {$R *.res}
 

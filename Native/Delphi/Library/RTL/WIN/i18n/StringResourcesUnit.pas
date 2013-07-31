@@ -1,4 +1,4 @@
-unit BeSharp.i18n.StringResourcesUnit;
+unit StringResourcesUnit;
 
 interface
 
